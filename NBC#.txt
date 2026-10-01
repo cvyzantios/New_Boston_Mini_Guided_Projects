@@ -1,0 +1,4689 @@
+
+VISUAL STUDIO EXPRESS
+PQT8W-68YB2-MPY6C-9JV9X-42WJV
+
+https://www.youtube.com/playlist?list=PLhq7kqloVlM95ROEbGpJEdpadDmtrC343
+
+//**************************NEW BOSTON C#:11************************************************
+//ONE BUTTON IS NEEDED
+//Array is a special variable which accept multiple variables
+
+//a)
+
+
+private void button1_Click(object sender,EventArgs e)
+{
+
+//Array is a special variable which accept multiple variables
+string[] Names={"Adam","Bob,"Joe"};
+MessageBox.Show(Names[0]); //Declare the element of array
+}
+
+}
+}
+
+//b)
+
+
+private void button1_Click(object sender,EventArgs e)
+{
+
+//Second way
+string[] Names=new string[5] ;
+Names[0]="Joe";
+MessageBox.Show(Names[0]); //Declare the element of array
+}
+
+}
+}
+
+//c)
+private void button1_Click(object sender,EventArgs e)
+{
+
+//Numbers
+int[] numbers={555,111,777} ;
+ MessageBox.Show(numbers[0].ToString()); //Declare the element of array
+}
+
+}
+}
+//**************************NEW BOSTON C#:12************************************************
+
+       private void button1_Click(object sender, EventArgs e)
+        {
+            List<string> Names = new List<string>(); //Standard syntax
+            Names.Add("Adam"); //Has one string
+            MessageBox.Show(Names[0]);
+        }
+    }
+}
+
+
+
+b)
+//second way
+
+//****************************NEW BOSTON C#:14******************************************************
+A)
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            while (i < 10)
+            {
+                textBox1.Text += i.ToString();
+                i++;
+
+            }
+
+        }
+B)
+ private void button1_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            do
+            {
+                textBox1.Text+=i.ToString();
+                i++;
+            }
+            while (i<10);
+
+            
+        }
+
+//*************************************NEW BOSTON C#:15******************************************************
+       private void button1_Click(object sender, EventArgs e)
+        {
+            {
+                try
+                {
+                    string[] names = new string[2];
+                    string s = names[0];//If i change the value with the same of new string it will give me other result
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+
+                finally
+                {
+                    MessageBox.Show("Your code is done");
+
+                }
+            }
+*******************************************************************************************************
+******************************************NEW BOSTON C#:16*******************************************************************************
+namespace NB_16
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Message("Adam", "Hello");
+        }
+        void Message(string message, string title)
+        {
+            MessageBox.Show(message, title);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Message("Bob", "Hello");
+        }
+    }
+}
+*******************************************************************************************************************************************
+**************************************New  Boston 21:Access Midifiers and Static**********************************************************************
+//It is needed to make a class with name "MyClass.cs" & form1.cs
+//A button
+
+--------------------------------------------------------------------
+myfile
+
+ using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+ 
+using NB_21;
+ 
+
+namespace NB_21
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private  void button1_Click(object sender, EventArgs e)
+        {
+            MyClass.ShowMessage("Adam");
+        }
+    }
+}
+
+-----------------------------------------------------------------------------------------
+//MyClass
+ 
+using NB_21;
+ 
+
+namespace NB_21
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private  void button1_Click(object sender, EventArgs e)
+        {
+            MyClass.ShowMessage("Adam");
+        }
+    }
+}
+
+
+-------------------------------------
+
+********************************************************************************************************************************************
+namespace NB_26
+{
+    class MyClass
+    {
+        private string Name = "Bob";
+        protected int Age = 10;
+        public virtual void ShowMessage(string Message)
+        {
+            System.Windows.Forms.MessageBox.Show(Message);
+        }
+    }
+    class MySecondClass : MyClass, MyInterface
+    {
+        public string HairColor = "Brown";
+        public override void ShowMessage(string Message)
+        {
+            System.Windows.Forms.MessageBox.Show(Message, "My title");
+        }
+        public void MyVoid()
+        {
+            base.ShowMessage("My Void");
+        }
+    }
+
+    interface MyInterface
+    {
+        void MyVoid();
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace NB_26
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MySecondClass msc = new MySecondClass();
+            msc.MyVoid();
+        }
+    }
+}
+
+
+****************************************************************************************************************************
+*************************************************NB-29************************************************************************
+// My Class
+
+namespace MyNamespace
+{
+partial class MyClass
+{
+public string Name="Mr. Smith";
+public int Age=38;
+partial void Message(string message);
+
+///////////////////////////////////////////////////////
+//Form1.cs
+
+namespace Youtube
+{
+public partial class form1:form
+{
+public form1()
+{
+InitializeComponent();
+}
+private void button1_Click(object sender,(EventArgs e))
+{
+MyClass mc=new MyClass();
+mc.ShowMessage("Adam");
+/////////////////////////////////////////////
+namespace MyNamespace
+{
+partial class MycLass
+{
+public string HairColor="Brown";
+public bool Glasses=false;
+partial void Message(string message)
+{
+System.Windows.forms.MessageBox.Show(message);
+}
+public void ShowMessage(string message)
+}
+{
+Message(message);}
+}
+}
+
+*********************************************NB-30*************************************************
+//ONE BUTTON IS NEEDED
+
+namespace NB_30
+{
+    abstract class MyClass
+    {
+        public static string Name = "Adam";
+        public static int Age = 15;
+        public static void Message(string message)
+        {
+            System.Windows.Forms.MessageBox.Show(message);
+
+        }
+        public abstract void ShowMessage(string message);
+    }
+
+    class MySecondClass : MyClass
+    {
+        public override void ShowMessage(string message)
+        {
+            System.Windows.Forms.MessageBox.Show(message);
+        }
+    }
+}
+************************************************NB-31 Delegate**************************************************
+//ONE BUTTON IS NEEDED
+
+//MycClass.cs
+   class MyClass
+    {
+
+        //Delegate pass the same parametres the same time
+        delegate void MyDelegate(string myString); //Declare delegate
+        public void ShowThoseMessages()
+        {
+            MyDelegate md = new MyDelegate(ShowMessage);
+            md += ShowAnotherMessage;
+            md("Adam");
+        }
+        void ShowAnotherMessage(string message)
+        {
+            System.Windows.Forms.MessageBox.Show(message);
+        }
+
+        void ShowMessage(string a)
+        {
+
+            System.Windows.Forms.MessageBox.Show(a, "Test");
+        }
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////////
+//form1.cs
+namespace YouTube
+{
+public partial class form1:form
+{
+public form1()
+{
+InitializeComponent();
+}
+private void buuton1_Click(object sender,EventArgs e)
+{
+MyClass mc=new MyClass();
+mc.ShowThoseMessages();
+
+}
+}
+}
+***************************************************NB-32********************************************************
+
+//MyClass.cs
+
+class MyClass
+{
+public event EventHandler OnPropertyChanged;
+string name;="";
+public string Name
+{
+get {return name;}
+set
+{
+name=value;
+OnPropertyChanged(this,new EventArgs()));
+}
+}
+}
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//form1.cs
+
+namespace WindowsFormsApplication1
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MyClass mc = new MyClass();
+            mc.OnPropertyChanged += new EventHandler(mc_OnPropertyChanged);
+            mc.Name = "Adam";
+        }
+        void mc_OnPropertyChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("The property has changed");
+        }
+    }
+}
+*****************************************************NB-33********************************************************
+
+//One checkbox and a button is needed
+//Ternary operator
+private void button1_Click(object sender, EventArgs e)
+{
+ private void button1_Click(object sender, EventArgs e)
+        {
+            // string myString="";
+//if (checkBox1.Checked) myString="it's checked";
+//else myString="it's not checked";
+//All the above is done with the code in the next line....
+MessageBox.Show((checkBox1.Checked)? "It's checked.":"It's not checked");
+// .. ? : Ternary operators
+        }
+    }
+}
+*****************************************************NB-34********************************************************
+//a
+private void button1_Click(object sender,EventArgs e)
+{
+OpenFileDialog ofd = new OpenFileDialog();
+}
+}
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+
+if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK) 
+{
+MessageBox.Show("Test");
+        }
+    }
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
+c)
+private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = " Open  Image";
+            ofd.Filter = "PNG Image |*.png|BIK|.bik";
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                MessageBox.Show(ofd.SafeFileName);
+            }
+        }
+    }
+}
+
+
+ 
+***************************************************NB-35c**********************************************
+    
+****************************************************NB-36*********************************************************
+ private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                StreamReader sr = new StreamReader(File.OpenRead(ofd.FileName));
+                textBox1.Text = sr.ReadToEnd();
+
+            }
+        }
+***************************************************NB-37a*****************************************************************
+
+//It is need it a text box and a button
+
+SOS It is no needed to add Openfile
+a)
+
+   private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                StreamReader sr = new StreamReader(File.OpenRead(ofd.FileName));
+                textBox1.Text = sr.BaseStream.Readbyte().ToString();
+                sr.Dispose();
+            }
+
+        }
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+b)private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                StreamReader sr = new StreamReader(File.OpenRead(ofd.FileName));
+                byte[] buffer = new byte[3];
+                sr.BaseStream.Read(buffer, 0, 3);
+                foreach (byte mybyte in buffer)
+                textBox1.Text += mybyte.ToString("x")+"";
+                sr.Dispose();
+            }
+
+        }
+    }
+}
+c)
+ private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                StreamReader sr = new StreamReader(File.OpenRead(ofd.FileName));
+                sr.BaseStream.Position=4; 
+                byte[] buffer = new byte[3];
+                sr.BaseStream.Read(buffer, 0, 3);
+                foreach (byte mybyte in buffer)
+                textBox1.Text += mybyte.ToString("x")+"";
+                sr.Dispose();
+            }
+
+*********************************************NB-38 Streamreader 3*********************************
+    private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                StreamReader sr = new StreamReader(ofd.FileName);
+                //0
+                char c = (char)sr.Peek(); //0
+                char c1 = (char)sr.Read();//1
+                char c2 = (char)sr.Read();
+                MessageBox.Show(c.ToString() + ":" + c1.ToString() + ":" + c2.ToString());
+            }
+        }
+    }
+}
+**********************************************NB-39 StreamWriter 1*********************************************
+
+a)
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        string path;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                button2.Enabled = true;
+                path = ofd.FileName;
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            StreamWriter sw = new StreamWriter(File.Create(path));
+            sw.Write(textBox1.Text);
+            sw.Dispose();
+
+        }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+B)
+string path;
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                button2.Enabled = true;
+                path = ofd.FileName;
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            StreamWriter sw = new StreamWriter(File.Create(path));
+            sw.Write(textBox1.Text);
+            sw.WriteLine("This is the second line");
+            sw.Dispose();
+        }
+    }
+}
+
+*******************************************************NB-40 Streawriter-2*********************************************
+namespace NB_40
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        string path;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                button2.Enabled = true;
+                path = ofd.FileName;
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            StreamWriter sw = new StreamWriter(File.OpenWrite(path));
+            sw.BaseStream.WriteByte(0x00);
+            sw.Dispose();
+        }
+    }
+}
+ 
+***********************************************************NB-41:Binary Reader***************************************************************
+using System.IO;
+
+//a
+namespace NB_41
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        string path;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                button2.Enabled = true;
+                path = ofd.FileName;
+
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BinaryReader br= new BinaryReader(File.OpenRead(path));
+            br.BaseStream.Position = 0x10;
+            textBox1.Text = br.ReadChar().ToString();
+
+        }
+    }
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+
+b)
+//Read characters
+private void button2_Click(object sender, EventArgs e)
+        {
+            BinaryReader br= new BinaryReader(File.OpenRead(path));
+            br.BaseStream.Position = 0x10;
+            foreach (char myChar in br.ReadChars(4)) textBox1.Text +=myChar;
+            br.Dispose(); 
+
+        }
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+c) private void button2_Click(object sender, EventArgs e)
+        {
+            BinaryReader br= new BinaryReader(File.OpenRead(path));
+            br.BaseStream.Position = 0x1f;
+            textBox1.Text =br.ReadInt16().ToString("X");
+            br.Dispose(); 
+
+        }
+    }
+}
+
+**************************************NB-42*******************************************************************
+
+  a )
+private void button2_Click(object sender, EventArgs e)
+        {
+            BinaryReader br = new BinaryReader(File.OpenRead(path));
+            br.BaseStream.Position = 0x1f;
+            byte[] buffer = br.Readbytes(2);
+            Array.Reverse(buffer);
+            textBox1.Text = BitConverter.ToInt16(buffer, 0).ToString("X");
+            br.Dispose();
+
+
+        }
+
+    }
+}
+
+b)
+ string path;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                button2.Enabled = true;
+                path = ofd.FileName;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BinaryReader br = new BinaryReader(File.OpenRead(path));
+            br.BaseStream.Position = 0x11;
+            byte[] buffer = br.Readbytes(4);
+            Array.Reverse(buffer);
+            buffer = BitConverter.GetBytes(4312);
+            br.Dispose();
+
+
+        }
+    }
+********************************************************NB C#43******************************************************************************
+ string path;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                button2.Enabled = true;
+                path = ofd.FileName;
+            }
+        }
+
+private void button2_Click(object sender,EventArgs e)
+{
+BinaryWriter bw = new BinaryWriter(File.OpenWrite(path));
+bw.Write('C');  //try some values to parenthesis
+bw.Dispose();
+}
+}
+}
+
+b)
+BinaryWriter bw =new BinaryWriter(File.OpenWrite(path));
+short myShort=1;
+byte[] buffer=BitConverter.GetBytes(myShort);
+Array.Reverse(buffer);
+bw.Write(buffer);
+bw.Dispose();
+}
+}
+}
+
+**********************************************************NB C# 44******************************************************************
+
+private void button1_Click(object sender, EventArgs e)
+        {
+           /*
+            SaveFileDialog sfd = new SaveFileDialog();
+            if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string path = sfd.FileName;
+                BinaryWriter bw = new BinaryWriter(File.Create(path));
+                bw.Write("Example text file");
+                bw.Dispose();
+           */
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter="Text File.txt" ;
+                if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string path = sfd.FileName;
+                BinaryWriter bw = new BinaryWriter(File.Create(path));
+                bw.Write("Example text file");
+                bw.Dispose();
+                }
+
+
+        }
+    }
+}
+
+******************************************************** NB C# 45****************************************************************
+private void button1_Click(object sender, EventArgs e)
+        {
+            /*
+           a)
+            int myInt = Convert.ToInt32(textBox1.Text);
+            MessageBox.Show(myInt.ToString());
+           
+            b)
+            char c = Convert.ToChar(textBox1.Text);
+            MessageBox.Show(c.ToString());
+
+          
+
+            c)
+            bool myBool = Convert.ToBoolean(textBox1.Text);
+            MessageBox.Show(myBool.ToString());
+
+           */
+
+            try
+            {
+                bool myBool = Convert.ToBoolean(textBox1.Text);
+                MessageBox.Show(myBool.ToString());
+            }
+
+            catch
+            {
+                MessageBox.Show("The conversion failed");
+            }
+
+
+
+
+
+        }
+    }
+} 
+********************************************************* NB C# 46        ******************************************************************
+
+ private void button1_Click(object sender, EventArgs e)
+        {
+
+            /*
+             * a)
+            int myInt = Convert.ToInt32(textBox1.Text);
+            MessageBox.Show(myInt.ToString());
+             * 
+             *  
+             */
+            /*
+             * b)
+           char c = Convert.ToChar(textBox1.Text);
+           MessageBox.Show(c.ToString());
+             * 
+             */ c)
+            try
+            {
+                bool myBool = Convert.ToBoolean(textBox1.Text);
+                MessageBox.Show(myBool.ToString());
+            }
+            catch
+            {
+                MessageBox.Show("The conversion failed");
+
+            }
+
+        }
+
+    }
+
+}
+***********************************************************NB C# 47  ************************************************************************
+
+   private void button1_Click(object sender, EventArgs e)
+        {
+            /*
+             * a)
+            object myObj = "Adam";
+            if (myObj is string) MessageBox.Show((string)myObj);
+             * 
+             * 
+           //b  
+            Control myControl = button1;
+            if (myControl is Button)
+            {
+                Button myButton = (Button)myControl;
+                MessageBox.Show(myButton.Text);
+             * 
+            // c)
+            Control myControl=button1;
+            if (myControl is Button)
+            {
+                Button myButton = myControl as Button;
+                MessageBox.Show(myButton.Text);
+
+            **/
+
+            //d)
+            Control myControl =button1;
+            object  myObj="Hello";
+            if (myObj is string)
+            {
+                string myString = myObj as string;
+                MessageBox.Show(myString);
+
+            }
+        }
+    }
+}
+
+************************************************************* NB C# 48*******************************************************
+***************************
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            /*
+               a)
+             
+
+            int myInt = Convert.ToInt32(textBox1.Text);
+            MessageBox.Show(myInt.ToString());
+         
+            b)
+            
+            char c = Convert.ToChar(textBox1.Text);
+            MessageBox.Show(c.ToString());
+             * 
+            
+
+            bool myBool = Convert.ToBoolean(textBox1.Text);
+            MessageBox.Show(myBool.ToString());
+
+              **/
+
+            try
+            {
+                bool myBool = Convert.ToBoolean(textBox1.Text);
+                MessageBox.Show(myBool.ToString());
+            }
+    
+           
+
+ catch {MessageBox.Show("The conversion failed");}
+
+
+            }
+}
+}
+ 
+***************************************************************** NB-49:Substring ****************************************************************
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+           /* 
+            * a)
+            string Name = "John Sith";
+            string FirstNmae = Name.Substring(0, 4);//0,4 are the positions
+            MessageBox.Show(FirstName);
+            */
+
+            string Name = "John Sith";
+            string LastName = Name.Substring(5, 4); //are positions
+            MessageBox.Show(LastName);
+
+
+            
+        }
+*****************************************************************NB-50:IndexOf and Trim*********************************
+private void button1_Click(object sender, EventArgs e)
+        {
+            /*
+             * 
+               //a)
+
+               string name = "John Smith";
+               string FirstName=name.Substring(0, name.IndexOf(' '));
+               MessageBox.Show(FirstName);
+             * 
+             
+            //b)
+
+            string name = "John Smith";
+            string FirstName = name.Substring(0, name.IndexOf(' ')+1);
+            MessageBox.Show(FirstName);
+             * 
+              
+            //c
+             * 
+            string name = "        John Smith   ";
+            string readName = name.Trim();
+            MessageBox.Show(name);
+
+            */
+            string name = "        John Smith   ";
+            string readName = name.Trim();
+            MessageBox.Show(readName);
+
+
+
+
+        }
+    }
+}
+*****************************************************NB-51****************************************
+  private void button1_Click(object sender, EventArgs e)
+        {
+
+            /* a)
+            string sentence = "Hello, my name is Smith.";
+            string after = sentence.Remove(0, 7); //Here is the remove method
+            MessageBox.Show(after);
+            
+            b)
+            string sentence = "Hello, my name is Adam.";
+            string after = sentence.Remove(18);
+            MessageBox.Show(after);
+             
+           
+            c)
+            string sentence = "Hello, my name is Smith.";
+            string after = sentence.Replace("Helo","Hi");  //Here is the replace method
+            MessageBox.Show(after);
+           */
+            string sentence = "Hello, my name is Smith.";
+            string after = sentence.Replace('l', 's');  //Here is the replace method
+            MessageBox.Show(after);
+            
+        }
+
+**************************************************** NB-52:Split to Char   ***************************************************************
+   private void button1_Click(object sender, EventArgs e)
+        {
+
+          /*
+
+
+            string names  = "Adam;Bob;Joe;Steve;Allen;Matt";
+            string[] nameArray = names.Split(';') ; //split the Array
+            foreach (string name in nameArray)
+           
+                MessageBox.Show(name);
+          */
+
+            string _letters = "abcdefg";
+            char[] letters=_letters.ToCharArray();
+            foreach (char c  in letters)
+                MessageBox.Show(c.ToString());
+
+
+
+        }
+    }
+******************************************NB-53:Math class**************************************************************
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /*
+             * 
+             a)
+            label1.Text = Math.Abs(-4).ToString();
+             
+             b)
+              label1.Text = Math.PI.ToString();
+             * 
+             c)
+             
+            */
+
+            label1.Text = Math.Pow(32,4).ToString();
+              
+        }
+    }
+}
+
+*****************************************************NB-54 Generating Random Numbers************************************
+       private void button1_Click(object sender, EventArgs e)
+        {
+
+            /*
+             * 
+          
+             a)
+             * 
+            Random r = new Random();
+            MessageBox.Show(r.Next().ToString());
+             * 
+            b)
+              Random r = new Random();
+            MessageBox.Show(r.Next(0,100).ToString());
+
+            c)
+             
+      Random r = new Random();
+            MessageBox.Show(r.NextDouble().ToString());       
+             * 
+              
+            
+            */
+
+byte[] buffer= new byte[5];
+Random r = new Random();
+r.NextBytes(buffer);
+MessageBox.Show(BitConverter.ToString(buffer));
+
+
+        }
+*****************************************************NB-55 ************************************
+private void button1_Click(object sender, EventArgs e)
+        {
+           
+            
+          /*
+           a)
+           * char[] letters = "qwertyabsdijlj".ToCharArray();
+            Random r = new Random();
+            MessageBox.Show(letters[r.Next(0, 25)].ToString());
+           */
+
+            char[] letters = "qwertyabsdijljgfshfsghsgsgsgs".ToCharArray();
+            Random r = new Random();
+            string randomString = " ";
+            for (int i = 0; i < 10; i++)
+            {
+                randomString += letters[r.Next(0,25)].ToString();
+            }
+            MessageBox.Show(randomString);
+
+        }
+
+
+*************************************************NB-56:FolderBrowserDialog***********************************************
+ private void button1_Click(object sender, EventArgs e)
+        {
+            /*
+             * a)
+           FolderBrowserDialog fbd = new FolderBrowserDialog();
+           if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+               MessageBox.Show("Test");
+                */
+            /*
+             * b)
+             *
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+          if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+              MessageBox.Show(fbd.SelectedPath); //We see the path
+           */
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.RootFolder = Environment.SpecialFolder.MyDocuments;
+            if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                MessageBox.Show(fbd.SelectedPath);  
+        }
+    }
+}
+
+
+
+**************************************************NB-57 Directory Class pt1***********************************************
+
+namespace NB_57
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        /*
+      private void button1_Click(object sender, EventArgs e)
+      {
+          FolderBrowserDialog fbd = new FolderBrowserDialog();
+          if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+          {
+              string[] files = Directory.GetFiles(fbd.SelectedPath);
+              foreach (string s in files)
+                  MessageBox.Show(s);
+          */
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            string[] drives = Directory.GetLogicalDrives();
+            foreach (string s in drives)
+                MessageBox.Show(s);
+        }
+
+**********************************************NB-58-Directory Class pt2*****************************************************
+namespace NB_58
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        /*
+       private void button1_Click(object sender, EventArgs e)
+       {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+          if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+          {
+              MessageBox.Show(Directory.GetCreationTime(fbd.SelectedPath).ToString());
+
+          }
+         *           MessageBox.Show(s);
+         *           
+         * b)
+         * 
+       private void button1_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                MessageBox.Show(Directory.GetLastAccessTime(fbd.SelectedPath).ToString());
+
+            }
+          
+         */
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                MessageBox.Show(Directory.GetLastWriteTime(fbd.SelectedPath).ToString());
+
+            }
+            {
+                MessageBox.Show(Directory.GetParent(fbd.SelectedPath).ToString());
+
+            }
+
+        }
+    }
+}
+****************************************************NB-59:Directory Class pt3***************************************************
+ private void button1_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                Directory.CreateDirectory(fbd.SelectedPath="\\CV");
+            /*
+        b) FolderBrowserDialog fbd = new FolderBrowserDialog();
+         if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+             Directory.Move(fbd.SelectedPath, "C:\\"); // sos: The syntx is different 
+             *
+             * 
+        c) FolderBrowserDialog fbd = new FolderBrowserDialog();
+         if (fbd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+             Directory.Delete(fbd.SelectedPath, "C:\\");
+               */
+
+
+        }
+    }
+}
+
+*****************************************************NB-60: File class PT 1*******************************************************
+  private void button1_Click(object sender, EventArgs e)
+        {
+            
+             /*
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                MessageBox.Show(File.Exists(ofd.FileName).ToString());
+              * 
+              */
+
+      
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                File.Delete(ofd.FileName);
+            //sos delete files
+
+        }
+    }
+}
+
+***************************************************NB-61:File class PT 2***********************************************************
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            /*
+a)
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                File.Copy(ofd.FileName, "");
+             * 
+             *  */
+
+b)
+
+             OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                File.Move(ofd.FileName, "");
+             
+
+
+        }
+    }
+}
+
+**************************************************NB-62:Path Class****************************************************************************
+//A button is needed
+
+
+a)
+private void button1_Click(object sender,EventArgs e)
+{
+OpenFileDialog ofd=new OpenFileDialog();
+if (ofd.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+MessageBox.Show(Path.GetDirectoryName(ofd.FileName));
+
+
+b)
+
+private void button1_Click(object sender,EventArgs e)
+{
+OpenFileDialog ofd=new OpenFileDialog();
+if (ofd.ShowDialog())==System.Windows.Forms.DialogResult.OK
+MessageBox.Show(Path.GetExtension(ofd.FileName)); //Message the extension of the file
+
+c)
+private void button1_Click(object sender,EventArgs e)
+{
+OpenFileDialog ofd=new OpenFileDialog();
+if (ofd.ShowDialog())==System.Windows.Forms.DialogResult.OK
+MessageBox.Show(Path.GetFileName(ofd.FileName));
+
+d)
+MessageBox.Show(Path.GetFileNameWithoutExtension(ofd.FileName));
+
+e)MessageBox.Show(Path.GetFullPath(ofd.FileName));
+
+f)MessageBox.Show(ofd.FileName);
+
+g)MessageBox.Show(Path.GetFullPath(ofd.FileName));
+
+
+**************************************************NB-63:Process Class pt1****************************************************************************
+
+//It is needed a)a button b)usinf System.Diagnostic
+
+
+a)
+private void button1_Click(object sender,EventArgs e)
+{
+ OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                Process.Start(ofd.FileName);
+            }
+
+b)
+private void button1_Click(object sender,EventArgs e)
+{
+Process.Start(ofd.FileName);
+}
+
+c)
+private void button1_Click(object sender,EventArgs e)
+{
+MessageBox.Show(Process.GetCurrentProcess().ProcessName);
+}
+
+
+d)
+private void button1_Click(object sender,EventArgs e)
+{
+Process.GetCurrentProcess().Kill();
+}
+
+
+
+**************************************************NB-64:Process Class pt2****************************************************************************
+   /* a)
+            foreach (Process p in Process.GetProcesses())
+                MessageBox.Show(p.ProcessName);
+            
+            b)  foreach (Process p in Process.GetProcesses())
+                MessageBox.Show(p.Responding.ToString());
+             * 
+             *  *
+            foreach (Process p in Process.GetProcesses())
+                if (!p Responding) p.kill();
+             * 
+             *  */
+
+            foreach (Process p in Process.GetProcessesByName("Chrome"))
+                MessageBox.Show(p.ProcessName); 
+
+
+
+**************************************************NB-66:Bitwise Operator pt1****************************************************************************
+ private void button1_Click(object sender, EventArgs e)
+        {
+            /*
+            string myString = null;
+
+            if (myString == null)
+                MessageBox.Show("The string is null.");
+            else MessageBox.Show(myString);
+             * 
+            
+            string myString = null;
+            MessageBox.Show(myString?? "The string is null.");
+             * 
+             *  *  */
+            int ? i=null;
+            int x=i ?? 8;
+            MessageBox.Show(x.ToString());
+
+
+
+
+        }
+
+
+
+
+
+**************************************************NB-67:Bitwise Operator pt2****************************************************************************
+
+
+ private void button1_Click(object sender, EventArgs e)
+        {
+            short myShort = 3 & 5; //011 &101=0001
+            MessageBox.Show(Convert.ToString(myShort, 2));
+        }
+    }
+}
+
+
+
+
+
+**************************************************NB-68:Bitwise Operator pt3****************************************************************************
+
+ private void button1_Click(object sender, EventArgs e)
+        {
+            /*
+            short myShort = 3 ^ 5; //POWER 
+            MessageBox.Show(Convert.ToString(myShort, 2));
+             */
+
+            short myShort = 5>>1; //Opposite swift left 
+            MessageBox.Show(Convert.ToString(myShort, 2));
+}
+
+**************************************************NB-69:Threading pt1****************************************************************************
+
+//You must add : using System.Threading;
+
+namespace NB_69
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        Thread t; //Only in part two is needed
+        private void button1_Click(object sender, EventArgs e)
+        {
+            /*
+             * a)
+            Thread t = new Thread(Freeze);
+            t.Start();
+        }
+        void Freeze()
+        {
+            for (; ; ) ;
+        }
+        private void form_FormClosing(object sender,FormClosingEventArgs e)
+        {
+
+        }
+             */
+
+            t = new Thread(Freeze);
+            t.Start();
+        }
+        void Freeze()
+        {
+            for (; ; ) ;
+        }
+        private void form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            t.Abort();
+
+
+        }
+
+
+
+**************************************************NB-70:Threading pt2****************************************************************************
+namespace NB_70
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        Thread t;
+        string myString;
+        private void button1_Click(object sender, EventArgs e)
+        {
+            t = new Thread(Write);
+            t.Start();
+            while (t.IsAlive) ;
+            textBox1.Text = myString;
+        }
+        void Write()
+        {
+            for (int i = 0; i < 1000; i++)
+                myString += "Adam" + i.ToString() + "\r\n";
+
+
+        }
+
+
+**************************************************NB-71:Threading pt3****************************************************************************
+
+      //A Textbox an dbutton is needed
+//using System.Threading;
+a)
+Thread t;
+string myString="";
+private void button1_Click(object sender, EventArgs e)
+{
+   Thread t;
+        string myString = "";
+        private void button1_Click(object sender, EventArgs e)
+        {
+            t = new Thread(Write);
+            object[] objA = { "Bob", 500 };
+            t.Start(objA);
+            while (t.IsAlive) ;
+            textBox1.Text = myString;
+        }
+        void Write(object array)
+        {
+            object[] o = array as object[];
+            for (int i = 0; i < Convert.ToInt32(o[1]); i++)
+                myString += o[0].ToString() + i.ToString() + "\r\n";
+        }
+        private void form1_formClosing(object sender, FormClosingEventArgs e)
+        {
+            t.Abort();
+        }
+}
+
+b)
+string myString="";
+private void button1_Click(object sender, EventArgs e)
+{
+t=new Thread(Write); 
+object[] objA={"Steve",500};
+t.Start(objA);
+while(t.IsAlive)
+textBox1.Text=myString;
+}
+void Write(object array)
+{
+object[]o=array as object[];
+for(int i=0; i<Convert.ToInt32(o[1]);i++)
+{
+Thread.Sleep(10);// sleep method,0,05
+myString +=o[0].ToString()+i.ToString()+"\r\n";
+}
+}
+private void form1_formClosing(object sender,FormClosingEventArgs e)
+{
+t.Abort();
+}
+    }
+}
+
+************************************************************NB-72:Web Client pt1 Status Log*****************************
+It is needed a) A textbook b) www.webps.com c)//using System.Net;
+
+//using System.Net;
+
+private void Form1_Load(object sender,EventArgs e)
+{
+WebClient wc=new WebClient();
+textBox1.Text = wc.DownloadString("http//:itzabam5x.webs.com/Status.txt");
+        }
+}
+
+
+
+
+************************************************************NB-73:WebClientClass pt2 Downloading Files*****************************
+It is needed a) A button b)using System.Net;
+
+a)
+private void button1_Click(object sender, EventArgs e)
+        {
+ SaveFileDialog sfd = new SaveFileDialog();
+            if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                WebClient wc = new WebClient();
+                wc.DownloadFileAsync(new Uri("http//:itzabam5x.webs.com/Status.txt"), sfd.FileName);
+}
+}
+
+
+b)
+     private void button1_Click(object sender, EventArgs e)
+        {
+                   {
+ SaveFileDialog sfd = new SaveFileDialog();
+            if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                WebClient wc = new WebClient();
+                wc.DownloadFileAsync(new Uri("http//:itzabam5x.webs.com/Status.txt"), sfd.FileName);
+                wc.DownloadFileCompleted +=new AsyncCompletedEventHandler(wc_DownloadFileCompleted); 
+
+
+        
+        }
+                   }
+        }
+       
+
+void wc_DownloadFileCompleted(object sender,AsyncCompletedEventArgs  e)
+{
+MessageBox.Show ("File is downloaded");
+}
+        }
+    }
+
+
+c)
+
+private void button1_Click(object sender, EventArgs e)
+        {
+        {
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    WebClient wc = new WebClient();
+                    wc.DownloadFileAsync(new Uri("http//:itzabam5x.webs.com/Status.txt"), sfd.FileName);
+                    wc.DownloadFileCompleted += new AsyncCompletedEventHandler(wc_DownloadFileCompleted);
+
+
+
+                }
+            }
+        }
+      void wc_DownloadProgressChanged(object sender,DownloadProgressChangedEventArgs e)
+
+{
+label1.Text="Progress:" +e.ProgressPercentage.ToString();
+}
+
+       
+
+void wc_DownloadFileCompleted(object sender,AsyncCompletedEventArgs  e)
+{
+MessageBox.Show ("File is downloaded");
+}
+        }
+    }
+
+
+************************************************************NB-74-75-76:Project 1 Email Sender, pt1,pt2,pt3 *****************************
+
+//Project name:"Email Sender"
+They are needed a)4 Text Boxes b)1 button c)1 groupBox d)//using System.Net.Mail;
+note:The passwordbox we make it with star.Look at the tutorial.Maximizebox=false 
+
+a)
+ MailMessage message = new MailMessage();
+                message.From = new MailAddress(textBox3.Text);
+                message.Subject = textBox1.Text;
+                message.Body = textBox2.Text;
+                foreach (string s in textBox5.Text.Split(';'))
+                    message.To.Add(s);
+                SmtpClient client = new SmtpClient();
+                client.Credentials = new NetworkCredential(textBox3.Text, textBox4.Text);
+                client.Host = "smtp.gmail.com";
+                client.Port = 587;
+                client.EnableSsl = true;
+                client.Send(message);
+}
+
+b)
+ {
+
+            try
+            {
+                MailMessage message = new MailMessage();
+                message.From = new MailAddress(textBox3.Text);
+                message.Subject = textBox1.Text;
+                message.Body = textBox2.Text;
+                foreach (string s in textBox5.Text.Split(';'))
+                    message.To.Add(s);
+                SmtpClient client = new SmtpClient();
+                client.Credentials = new NetworkCredential(textBox3.Text, textBox4.Text);
+                client.Host = "smtp.gmail.com";
+                client.Port = 587;
+                client.EnableSsl = true;
+                client.Send(message);
+           
+        }
+            catch { MessageBox.Show("There is error,look the address & connections", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
+            
+}
+    }
+
+}
+
+c)
+private void button1_Click(object sender, EventArgs e)
+        {
+            
+
+            try
+            {
+             
+if (!textBox3.Text.Contains("@gmail.com"))
+    {
+MessageBox.Show("You need to provide an email @gmail.com");
+}
+
+                MailMessage message = new MailMessage();
+                message.From = new MailAddress(textBox3.Text);
+                message.Subject = textBox1.Text;
+                message.Body = textBox2.Text;
+                foreach (string s in textBox5.Text.Split(';'))
+                    message.To.Add(s);
+                SmtpClient client = new SmtpClient();
+                client.Credentials = new NetworkCredential(textBox3.Text, textBox4.Text);
+                client.Host = "smtp.gmail.com";
+                client.Port = 587;
+                client.EnableSsl = true;
+                client.Send(message);
+           
+        }
+             
+            catch { MessageBox.Show("There is error,look the address & connections", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
+          
+   
+        }
+
+
+d)
+//in the main code we add above all
+button1.Enabled=false
+
+//in the last line of code we add:
+
+Finally (button1.Enabled=true;)
+}
+//Close brackets
+
+************************************************************NB-77:DateTime Struct *****************************
+//One button is needed
+
+a)
+private void button1_Click(object sender, EventArgs e)
+        {
+DateTime dt= new DateTime(1995,10,16,3,32,52);
+MessageBox.Show(dt.ToString());
+}
+}
+
+b)
+private void button1_Click(object sender, EventArgs e)
+        {
+DateTime dt=DateTime.Today;
+MessageBox.Show(dt.ToString());
+}
+
+c)
+private void button1_Click(object sender, EventArgs e)
+        {
+DateTime dt=DateTime.Now;
+MessageBox.Show(dt.ToString());
+}
+
+d)
+private void button1_Click(object sender, EventArgs e)
+        {
+{
+MessageBox.Show(DateTime.IsLeapYear(2012).ToString());
+}
+
+e)
+private void button1_Click(object sender, EventArgs e)
+        
+{
+MessageBox.Show(DateTime.DaysInMonth(2011,7).ToString());
+}
+
+f)
+private void button1_Click(object sender, EventArgs e)
+        {
+MessageBox.Show(DateTime.Now.ToFileTime().ToString("x"));
+
+
+************************************************************NB-78:DateTimePicker*****************************
+//It is needed a)One button b)A datetime picker c)Look at DateTimePicker.CustomFormat.Property d)dateTimePicker+value
+
+private void button1_Click(object sender, EventArgs e)
+        {
+DateTime  dt=dateTimePicker1.Value;
+MessageBox.Show(dt.ToString());
+}
+
+
+
+************************************************************NB-79:Picture Box & Image Class*****************************
+
+a)
+
+private void button1_Click(object sender, EventArgs e)
+        {
+
+OpenFileDialog ofd=new OpenFileDialog();
+if (ofd.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+{
+pictureBox1.ImageLocation=ofd.FileName;
+}
+
+
+b)
+
+private void button1_Click(object sender, EventArgs e)
+        {
+
+OpenFileDialog ofd=new OpenFileDialog();
+if (ofd.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+{
+Image image=Image.FromFile(ofd.FileName);
+pictureBox1.Image=image;
+}
+
+c)
+private void button1_Click(object sender, EventArgs e)
+        {
+pictureBox1.ImageLocation="http://www.imagelocation.com";
+}
+
+
+************************************************************NB-80:Clipboard Class*****************************
+It is needed: a)One button b)Two picture boxes
+
+a)
+
+private void button1_Click(object sender, EventArgs e)
+        {
+textBox2.Text=Clipboard.GetText();
+}
+
+b)
+
+private void button1_Click(object sender, EventArgs e)
+        {
+pictureBox2.Image=Clipboard.GetImage();
+}
+
+
+c)
+private void button1_Click(object sender, EventArgs e)
+{
+        {
+Clipboard.Select("Adam");
+}
+catch {}
+}
+
+d)
+private void button1_Click(object sender, EventArgs e)
+{
+try
+{
+Clipboard.SetImage(pictureBox1.Image);
+}
+catch{}
+pictureBox2.Image=Clipboard.GetImage());
+}
+
+e)
+{
+Clipboard.Clear();
+
+f)
+private void button1_Click(object sender, EventArgs e)
+{
+  pictureBox1.ImageLocation = "C:\\Documents and Settings\\cv\\Desktop\\10395_10153824764358205_6420089315749104731_n.jpg";
+}
+
+
+FINAL:
+textBox2.Text = Clipboard.GetText();
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            pictureBox1.ImageLocation = "C:\\Documents and Settings\\cv\\Desktop\\10395_10153824764358205_6420089315749104731_n.jpg";
+        }
+
+****************************************************-NB C# 81:Colour Dialog**********************************************************************************
+//One button is needed
+
+a)
+private void button1_Click(object sender,EventArgs e)
+{
+ColorDialog cd = new ColorDialog();
+if (cd.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+button1.BackColor=cd.Color;
+}
+
+b)
+private void button1_Click(object sender,EventArgs e)
+{
+ColorDialog cd= new ColorDialog();
+cd.AllowFullOpen=false;
+if (cd.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+button1.BackColor=cd.Color;
+}
+
+c)
+private void button1_Click(object sender,EventArgs e)
+{
+ColorDialog cd= new ColorDialog();
+cd.ShowHelp=true;
+if (cd.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+button1.BackColor=cd Color;
+}
+
+d)
+private void button1_Click(object sender,EventArgs e)
+{
+      ColorDialog cd = new ColorDialog();
+            cd.ShowHelp = true;
+            cd.HelpRequest += new EventHandler(cd_HelpRequest);
+            if (cd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                button1.BackColor = cd.Color;
+        }
+        void cd_HelpRequest(object sender, EventArgs e)
+        {
+            MessageBox.Show("Choose a colour for the Backround of your button ");
+        }
+
+**********************************************NB-82: Colour Struct*************************************************************
+//One button is needed
+
+a)
+//One button is needed
+
+private void button1_Click(object sender,EventArgs e)
+{
+ColorDialog cd= new ColorDialog();
+cd.ShowHelp=true;
+if (cd.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+{
+Color c=cd Color;
+if(c.IsNamedColor) MessageBox.Show(c.Name);
+}
+
+b)
+private void button1_Click(object sender,EventArgs e)
+{
+ColorDialog cd= new ColorDialog();
+if (cd.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+{
+Color c= cd.Color;
+if (c.IsKnownColor) MessageBox.Show(c.ToKnownColor().ToString());
+}
+
+c)
+private void button1_Click(object sender,EventArgs e)
+{
+Color c.Color.FromKnownColor(KnownColor.GradientActiveCaption);
+MessageBox.Show(c.ToKnownColor().ToString());
+}
+
+d)
+private void button1_Click(object sender,EventArgs e)
+{
+Color c= Color.FromKnownColor(KnownColor.GradientActiveCaption);
+MessageBox.Show(c.ToArgb().ToString("x"));
+             
+}
+
+e)
+private void button1_Click(object sender,EventArgs e)
+{
+Color c = Color.Black;
+            int i = c.ToArgb();
+            Color b = Color.FromArgb(i);
+            button1.BackColor = b;
+}
+
+***********************************************************NB-83:FontDialog***************************************************************
+It is needed: a)A button b)A text box (big)
+a)
+private void button1_Click(object sender,EventArgs e)
+{
+FontDialog fd=new FontDialog();
+if (fd.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+{
+textBox1.Font=fd.Font;
+}
+
+b)
+//Restrictions & additions
+private void button1_Click(object sender,EventArgs e)
+{
+FontDialog fd=new FontDialog();
+fd.MinSize=10;
+fd.MaxSize=20;
+fd.ShowColor=true;
+fd.ShowHelp=true;
+if (fd.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+{
+textBox1.Font=Font;
+textBox1.ForeColour=fd.Colour;
+}
+
+c)
+private void button1_Click(object sender,EventArgs e)
+{
+FontDialog fd=new FontDialog();
+fd.MinSize=10;
+fd.MaxSize=20;
+fd.ShowColor=true;
+fd.ShowHelp=true;
+fd.HelpRequest +=new EventHandler(fd_HelpRequest);
+if (fd.ShowDialog()==System.Windows.Forms.DialogResult.OK)
+{
+textBox1.Font=Font;
+textBox1.ForeColor=fd.Color;
+}
+}
+void fd_HelpRequest(object sender,EventArgs e)
+{
+MessageBox.Show("Choose a font for the textBox");
+}
+
+*************************************NB-84:Timer Control**********************************************************
+//One button is needed
+//Drag & drop in form a timer
+//In interval property we put 1000msec
+
+
+a)
+
+private void button1_Click(object sender,EventArg e)
+{
+timer1.Start();
+}
+
+private voi timer1_Tick(object sender,EventArgs e)
+{
+MessageBox.Show("Hello");
+} 
+}
+}
+
+b)
+private void button1_Click(object sender,EventArg e)
+{
+timer1.Start
+}
+private void timer1_Tick(object sender,EventArgs e)
+{
+timer1.Stop();
+MessageBox.Show("Hello");
+}
+
+c)
+private void button1_Click(object sender,EventArg e)
+{
+timer1.Start();
+}
+int i=0;
+
+private void timer1_Tick(object sender,EventArgs e)
+{
+i++
+teBox1.Text +=i.ToString();
+}
+
+
+********************************************NB-85:Playing Sounds**********************************************************
+
+//a)One button is needed  b)add: using System.Media;
+
+a)
+private void button1_Click(object sender,EventArg e)
+{
+OpenFileDialog ofd=new OpenFileDialog();
+if (ofd.ShowDialog()==DialogResult.OK)
+{
+SoundPlayer s=new SoundPlayer(ofd.FileName);
+s.Play();
+}}
+
+b)
+private void button1_Click(object sender,EventArg e)
+{
+OpenFileDialog ofd=new OpenFileDialog();
+if (ofd.ShowDialog()==DialogResult.OK
+{
+SoundPlayer=new SoundPlayer(ofd.FileName)
+s.PlayLooping();
+}
+}
+
+c)//System Sounds
+private void button1_Click(object sender,EventArg e)
+
+// Check the follows
+// a) SystemSounds.Beep.Play();
+// b) SystemSounds.Exclamation.Play();
+// c) SystemSounds.Hand.Play();
+
+****************************************************NB-86:MaskedTextBox Control***************************************************
+
+//A button & a MaskedTextBox is needed
+*In Propertes->Masked->Numbers only (check)
+
+*************************************************NB-87:Multiple Forms**************************************************
+
+*Extra Form:Project->New WindowsForms->Name it and add
+//One button is needed
+
+a)
+//How to pass in second form
+
+private void button1_Click(object sender,EventArgs e)
+{
+
+Form2 f=new form2();
+f.Show();
+}
+}
+
+
+b)
+//Alternative
+
+private void button1_Click(object sender,EventArg e)
+{
+Form2 f=new Form2();
+f.ShowDialog();
+}
+
+
+c)
+//In form 2we put:
+public Form2(string myString)
+{
+InitialnteComponent
+}
+
+d)
+// 
+we go to form1
+
+private void button1_Click(object sender,EventArg e)
+{
+Form2=new Form(textBox1.Text);
+f.ShowDialog();
+}
+
+
+e)
+public form2(string my String)
+{
+InitialieComponent()
+label1.Text=myString;
+}
+
+
+
+*************************************************NB-88:Multi Document Interface MDI**************************************************
+//Two buttons are needed
+a)
+
+private void button1_Click (object sender,EventArgs e)
+{
+    this.IsMdiContainer=true;
+    Form2 f=new Form2();
+    f.MdiParent=this;
+    f.Show();
+    }
+}
+
+b) 
+
+private void button1_Click (object sender,EventArgs e)
+{
+this.IsMdiContainer=true;
+Form2 f=new Form2();
+    f.MdiParent=this;
+    f.Show();
+Form3 f1=new form3();
+f1.MdiParent=this;
+f1.Show();
+Form4 f2=new Form4();
+f2.MdiParent=this;
+f2.Show();
+}
+
+private void button2_Click (object sender,EventArgs e)
+{
+this.layoutMdi(MdiLayout.ArrangeIcons);
+}
+
+c)
+this.LayoutMdi(MdiLayout.TileHorizontal);// TileVertical 
+
+
+*************************************************NB-89:ComboBox Control**************************************************
+//A button & a Combobox is needed
+//In Combobox we can Edit (look at the tutorial)
+//Properties->DropDownStyle->DropDownList
+
+a)
+
+
+private void button1_Click (object sender,EventArgs e)
+{
+if (comboBox1.Text=="Adam") MessageBox.Show("Test");
+}
+
+b)
+
+private void button1_Click (object sender,EventArgs e)
+{
+comboBox1.Items[0]:"Steve";
+}
+
+
+c)
+
+private void button1_Click (object sender,EventArgs e)
+{
+comboBox1.Items.Add("Steve");
+}
+
+d)
+
+private void button1_Click (object sender,EventArgs e)
+{
+MessageBox.Show(comboBox1.Items.Count.ToString())
+}
+
+e)
+private void button1_Click (object sender,EventArgs e)
+{
+MessageBox.Show("Test");
+}
+
+
+
+*************************************************NB-90:ProgressBar Control**************************************************
+
+//We need a)Two buttons b)a progreess bar
+
+a)
+Properties Value 0,1/Maximum 0/Step
+
+private void button1_Click (object sender,EventArgs e)
+{
+progressBar1.Value=0;
+}
+
+private void button2_Click (object sender,EventArgs e)
+{
+progressBar1.Value=0;
+}
+
+b)
+private void button1_Click (object sender,EventArgs e)
+{
+progressBar1.PerformStep();
+}
+
+c)
+private void button1_Click (object sender,EventArgs e)
+{
+progressBar1.Value=0;
+}
+
+d)
+private void button1_Click (object sender,EventArgs e)
+{
+progressBar1.Style=ProgressBarStyle.Marquee;
+progressBar1.MarqueeAnimationSpeed=200;
+}
+
+private void button2_Click (object sender,EventArgs e)
+{
+progressBar1.Style=ProgressBarStyle.Blocks;
+}
+
+
+
+*************************************************NB-91:ListView Control Part1**************************************************
+//They are needed a)Two text b)a button c)A list View.It is recommended to look at tutorial
+
+private void button1_Click_1(object sender, EventArgs e)
+{
+ListViewItem lvi = new ListViewItem(textBox1.Text);
+            lvi.SubItems.Add(textBox2.Text);
+            lvi.SubItems.Add(textBox3.Text);
+            listView1.Items.Add(lvi);
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+
+}
+}
+}
+
+*************************************************NB-92:ListView Control Part2**************************************************
+
+//We add Content MenuStrip.We put it in specific location.**Look at the tutorials
+
+private void getNameOfItemToolStripMenuItem_Click(object sender,EventArgs e)
+{
+if (listView1.SelectedItems.Count !=0)
+{
+MessageBox.Show(listView1.SelectedItems[0].SubItems[0].Text);}
+}
+
+
+*************************************************NB-93:ListView Control Part3**************************************************
+
+//Look at the tutorial:We add the multiselect
+
+private void getNameOfItemToolStripMenuItem_Click(object sender,EventArgs e)
+{
+if (listView1.SelectedItems.Count !=0)
+{
+foreach (ListViewItem lvi in listView1.SelectedItems)
+MessageBox.Show(lvi.SubItems[1].Text);
+}
+}
+
+
+*************************************************NB-94:ListView Control Part4**************************************************
+//Look at the tutorial
+//We add in  the tuttorial the follow lines
+
+namespace NB_94
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ListViewItem lvi = new ListViewItem(textBox1.Text);
+            lvi.SubItems.Add(textBox2.Text);
+            lvi.SubItems.Add(textBox3.Text);
+            listView1.Items.Add(lvi);
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+
+        }
+        private void getNameOfItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count != 0)
+            {
+                foreach (ListViewItem lvi in listView1.SelectedItems)
+                    MessageBox.Show(lvi.SubItems[1].Text);
+            }
+        }
+
+        private void getNameOfItemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count != 0)
+            {
+                foreach (ListViewItem lvi in listView1.SelectedItems)
+                    lvi.Remove();
+            }
+        }
+
+        private void removedItemsToolStripMenu_Click(object sender, EventArgs e)
+        {
+            listView1.Items.Clear();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem lvi in listView1.Items)
+                if (lvi.Checked) lvi.Remove();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+}
+
+*************************************************NB-95:ToolStrip & StatusStrip Controls**************************************************
+
+//We put in the form a)A ToolStrip b)We must save form As(Look at the tutorial c) we select "Drop Down Button".We put Open & Save d)In DesplayStyle:Text 
+e)Propertes:Text:file f)Add Status Strip
+
+
+*************************************************NB-96:Notify Control**************************************************
+
+//We add a)one button b)a Notifier icon
+a)
+private void button1_Click (object sender,EventArgs e)
+{
+notifyIcon1.ShowBallonTip(100,"My Title","My Text",ToolTipIcon.Info);
+}
+
+b)
+private void button1_Click (object sender,EventArgs e)
+{
+this.Hide();
+notifyIcon1.ShowBalloonTip(100,"Still Running","Your app is still running",ToolTipIcon.Info);
+}
+
+c)
+//We choose Notification -> In the wright corner thunder (thunder icon)->Choose MouseDoubleClick 
+//Next we go to code editor and add:
+private void notifyIcon1_MouseDoubleClick(object sender,MoveEventArgs e)
+{
+this.Show();
+
+
+}
+}
+
+*************************************************NB-97:Opening Files with your App**************************************************
+
+a)
+// We go to Form1.cs
+public Form1(string s)
+{
+InitializeComponent();
+MessageBox.Show(s);
+}
+}
+//Next we go to:
+static void Main(string() files)
+{
+Applicaion.EnableVisualStyles();
+Application.SetCompatibleTextRenderingDefault(false);
+foreach(string s in files)
+Application.Run(new Form1(s));
+
+}
+}
+
+
+*************************************************NB-98:Settings**************************************************
+//It is something like database
+//A button & a Text Box is needed
+//Go to Project->WindowsForm Application Properties->Settings
+//Look at the tuttorial
+
+namespace WindowsFormsApplication11
+{
+public partial class Form:Form
+{
+public Form1()
+{
+InitializeComponent();
+textBox1.Text=WindowsFormsApplication1.Properties.Settings.Default.Name;
+textBox2.Text=WindowsFormsApplication1.Properties.Settings.Default.Age.ToString();
+}
+private void button1_Click(object sender, EventArgs e)
+{
+WindowsFormsApplication1.Properties.Settings.Default.Name=textBox1.Text;
+WindowsFormsApplication1.Properties.Settings.Default.Age=Convert.ToInt32(textBox2.Text);
+WindowsFormsApplication1.Properties.Settings.ButtonA=button1;
+WindowsFormsApplication1.Properties.Settings.Default.Save();
+}
+}
+
+
+In this program is:
+ NB_98.Properties.Settings.Default.Name = textBox1.Text;
+            NB_98.Properties.Settings.Default.Age = Convert.ToInt32(textBox2.Text);
+            NB_98.Properties.Settings.Button1 = button1;
+            NB_98.Properties.Settings.Default.Save();
+        }
+
+*************************************************NB-99:TreeView Control pt1**************************************************
+//We need a) a button b)a treeView
+
+    private void button1_Click(object sender, EventArgs e)
+        {
+            treeView1.Nodes.Add("People");
+            treeView1.Nodes.Add("Animals");
+            treeView1.Nodes[0].Nodes.Add("Adam");
+            treeView1.Nodes[0].Nodes.Add("Bob");
+            treeView1.Nodes[0].Nodes.Add("Joe");
+            treeView1.Nodes[1].Nodes.Add("Dog");
+            treeView1.Nodes[1].Nodes.Add("Cat");
+            treeView1.Nodes[1].Nodes[0].Nodes.Add("Spot");
+        }
+
+*************************************************NB-100:TreeView Control pt2**************************************************
+
+private void button2_Click_1(object sender,EventArgs e)
+{
+treeView1.Nodes.Clear();
+}
+
+b)
+namespace NB_100
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            treeView1.Nodes.Add("People");
+            treeView1.Nodes.Add("Animals");
+            treeView1.Nodes[0].Nodes.Add("Adam");
+            treeView1.Nodes[0].Nodes.Add("Bob");
+            treeView1.Nodes[0].Nodes.Add("Joe");
+            treeView1.Nodes[1].Nodes.Add("Dog");
+            treeView1.Nodes[1].Nodes.Add("Cat");
+            treeView1.Nodes[1].Nodes[0].Nodes.Add("Spot");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            treeView1.Nodes.Clear();
+
+            
+        }
+
+        List<TreeNode> tnList = new List<TreeNode>();
+        void RemoveChecked(TreeNodeCollection tnc)
+        {
+            foreach (TreeNode tn in tnc)
+                if (tn.Checked) tnList.Add(tn);
+                else if (tn.Nodes.Count != 0) RemoveChecked(tn.Nodes);
+            foreach (TreeNode tn in tnList)
+                treeView1.Nodes.Remove(tn);
+        }
+    }
+}
+
+*************************************************NB-101:TreeView Control pt3**************************************************
+//We need:a)A button b)A tree view c)Image List
+//Look at the tuttorial
+
+private void button_Click_1(object sender, EventArgs e)
+{
+TreeNode tn=new TreeNode();
+tn.Text="Person";
+tn.ImageIndex=3;
+tn.SelectedImageIndex=3;
+treeView1.Nodes.Add(tn);
+TreeNode t=new TreeNode();
+t.Text="Animal";
+t.ImageIndex=0;
+t.SelectedImageIndex=0;
+treeView1.Nodes.Add(t);
+TreeNode  tc=new TreeNode();
+tc.Text="Cat";
+tc.ImageIndex=2;
+tc.SelectedImageIndex=2;
+treeView1.Nodes[1].Nodes.Add(tc);
+}
+}
+}
+
+*************************************************NB-102:Property Grid***************************************************************
+//We need:a)button b)3 Labels & 3 text
+//We add the property greed
+namespace WindowsFormsApplication
+{
+public partial class Form1:Form
+{
+public Form1()
+{
+Iniatial Component();
+}
+Person p=new Person();
+private void button1_Click(object sender,EventArgs e)
+{
+p.Name="Adam";
+p.Age=15;
+p.Email"cvyzantios@gmail.com";
+Reload();
+}
+void Reload()
+{
+textBox1.Text=p.Name;
+textBox2.Text=p.Age.ToString();
+textBox3.Text=p.Email;
+}
+}
+class Person
+{
+public string Name
+{
+get;
+set;
+}
+public int Age
+{
+get;
+set;
+}
+public string Email
+{
+get;
+set;
+}
+}
+
+
+b)
+private void button1_Click(object sender,EventArgs e)
+{
+p.Name="Adam";
+p.Age=15;
+p.Email="cvyzantios@gmail.com"
+propertyGrid.SelectedObject=p;
+Reload();
+}
+
+*************************************************NB-103:Accessing All Controls  pt2*************************************************
+
+a)
+//We need a)then buttons b)One groupBox about a button within
+private void button1_Click_1(object sender,EventArgs e)
+{
+foreach(Control c in this.Controls)
+c.Text="Adam";
+}
+
+b)
+private void button1_Click_1(object sender,EventArgs e)
+{
+AccessAll(this.Controls);
+}
+void AccessALL(Control.ControlCollection cc)
+{
+foreach(Control c in cc)
+{
+c.Text="Adam";
+if (c.HasChildren) AccAll(c.Controls);
+}
+
+
+*************************************************NB-104:Accessing All Controls  pt2*************************************************
+a)
+private void button1_Click_1(object sender,EventArgs e)
+{
+AccessAll(this.Controls);
+}
+void AccessAll(Control.ControlCollection cc)
+{
+foreach (Control c in cc)
+{
+if (c is Button) c.Enabled=false;
+if (c.HasChildren) AccessAll(c.Controls);
+}
+
+b)
+private void button1_Click_1(object sender,EventArgs e)
+{
+AccessAll(this.Controls);
+}
+void AccessAll(Control.ControlCollection cc)
+{
+foreach (Control c in cc)
+{
+if (c is Button) 
+{
+Button b=c as Button;
+b.Click t=new EventHandler(b_Click)
+}
+}
+void b_Click(object sender,EventArgs e)
+{
+MessageBox.Show("You clicked a button");
+}
+
+
+*************************************************NB-105:WebBrowser Control pt1**************************************************
+We need a)One button b)TextBox c)a WebBrowser (control)
+
+a)
+private void button1_Click_1(object sender,EventArgs e)
+{
+webBrowser1.Navigate(textBox1.Text);
+}
+
+b)
+//Go to webBrowser1 propertes->Document Complete->Navigated
+//Down from the previous code we add this
+
+private void webBrowser1_Navigated(object sender,WebBrowserNavigatedEventArgs e)
+{
+MessageBox.Show("You clicked a button.");
+}
+
+
+textBox1.Text=webBrowser1.Url.ToString();
+}
+}
+
+c)We add 3 buttons with title a)GoBack b)Refresh c)GoForward
+private void button2_Click_1(object sender,EventArgs e)
+{
+webBrowser1.GoBack();
+}
+
+private void button3_Click_1(object sender,EventArgs e)
+{
+webBrowser1.Refresh();
+}
+
+private void button4_Click_1(object sender,EventArgs e)
+{
+webBrowser1.GoForward();
+}
+
+private void button5_Click_1(object sender,EventArgs e)
+{
+webBrowser1.GoHome();
+}
+
+d)
+//We add 5th button with name "GoHome"
+
+ 
+*************************************************NB-106:WebBrowser Control pt2**************************************************
+//We need:a)A button b)a text box c)a Label box
+
+public partial class Form1:form
+{
+public Form1()
+{
+InitializeComponent();
+}
+WebBrowser wb=new WebBrowser();
+private void button1_Click(object sender,EventArgs e)
+{
+wb.Navigate("http://www.bungie.net/Stats/Reach/Default.aspx?player="+textBox1.Text+"&sg+0");
+wb.DocumentCompleted+=new WebBrowserDocumentCompletedEventHandler(wb_DocumentCompleted);
+}
+void wb_DocumentCompleted(object sender,WebBrowserDocumentCompletedEventArgs e)
+{
+label1.Text="Armory Completion:"+wb.Document.GetElementById("ct100_mainContent_armorCompletionLabel").InnerText;
+}
+
+
+*************************************************NB-C# 107:WebBrowser Control pt3*******************************************
+//SOS:Look at the tutorails
+// We ad:two buttons, two text boxes
+//In the "big" text box propertes we go to "url" and we write: "http://yahoo.com"
+
+public form1()
+{
+InitializeComponent();
+}
+private void button1_Click(object sender,EventArgs e)
+{
+webBrowser1.Document.GetElementById("p_13838465.p").InnerText=textBox1.Text;
+}
+private void button2_Click(object sender,EventArgs e)
+{
+webBrowser1.Document.GetElementById("search-submit").InvokeMember("Click");
+}
+
+********************NB-C# 108:TrackBar & NumericUpDown Controls*************
+
+//We need:a)One button b)a trackBar
+//In track Bar we go in proprtes "Maximum" and we define "10"
+"Tickfrequency" 1
+a)
+private void button1_Click(object  sender, EventArgs e)
+{
+MessageBox.Show(trackBar1.Value.ToString());
+}
+//We can change the "orientation", "TrickStyle
+//We add the numericuoDown 
+
+
+********************NB-C# 109:Reading XML pt1*******************************************************************
+//Must be installed Notepad++
+//We must add:"using System.Xml";
+//One button is needed
+private void button1_Click(object sender,EventArgs e)
+{
+OpenFileDialog ofd=new OpenFileDialog();
+ofd.Filter="XML|*.xml";
+if (ofd.ShowDialog()==DialogResult.OK)
+{
+XmlDocument xDoc=new XmlDocument();
+xDoc.Load(ofd.FileName);
+MessageBox.Show(xDocSelectSingleNode("People/Person/Age").InnerText);
+
+------------XML Document-----------------
+<People>
+  <Person>
+<Name>CV</Name>
+<Age>15</Age>
+<Email>cv@gmail.com</Email>
+<Person>
+</People>
+----------------------------------------------
+
+
+********************NB-C# 110:Reading XML pt2*******************************************************************
+a)
+private void button1_Click(object sender,EventArgs e)
+{
+XmlDocument xDoc=new XmlDocument();
+xDoc.Load("http:itzadam.webs.com/People.xml");
+MessageBox.Show(xDocSelectSingleNode("People/Person/Age").InnerText);
+
+b)
+private void button1_Click(object sender,EventArgs e)
+{
+OpenFileDialog ofd=new OpenFileDialog();
+ofd.Filter="XML|*.xml";
+if (ofd.ShowDialog()==DialogResult.OK)
+{
+XmlDocument xDoc= new XmlDocument();
+xDoc.Load(ofd.FileName);
+foreach (XmlNode node in xDoc.SelectNodes("Peolple/Person"))
+MessageBox.Show(node.SelectSingleNode("Name").InnerText);
+
+------------XML Document-----------------
+<People>
+  <Person>
+<Name>CV</Name>
+<Age>15</Age>
+<Email>cv@gmail.com</Email>
+<Person>
+  <Person>
+<Name>Chris</Name>
+<Age>16</Age>
+<Email>cv2@gmail.com</Email>
+<Person>
+</People>
+----------------------------------------------
+
+
+*************************************************NB-C# 111:Editing XML file*******************************************
+//We need :a)Two buttons with names:"Open", "Save" b)Three labels a)Name b)Age c)Email and the corresponding TextBoxes
+
+  private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "XML|*.xml";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                path = ofd.FileName;
+                xDoc.Load(path);
+                xDoc = new XmlDocument();
+                textBox1.Text = xDoc.SelectSingleNode("People/Person/Name").InnerText;
+                numericUpDown1.Value = Convert.ToInt32(xDoc.SelectSingleNode("People/Person/Age").InnerText);
+                textBox3.Text = xDoc.SelectSingleNode("People/Person/Email").InnerText;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            xDoc.SelectSingleNode("People/Person/Name").InnerText = textBox1.Text;
+            xDoc.SelectSingleNode("People/Person/Name").InnerText = numericUpDown1.Value.ToString();
+            xDoc.SelectSingleNode("People/Person/Name").InnerText = textBox3.Text;
+            xDoc.Save(path);
+        }
+    }
+}
+
+
+**********************************************************NBC# 112:Writing New  XML File***********************************************
+//We need a)A butt b)Three textboxes with labels:1)Name 2)Age 3)Email
+
+      private void button1_Click(object sender, EventArgs e)
+        {
+            XmlTextWriter xWriter = new XmlTextWriter("C:", Encoding.UTF8);
+            xWriter.Formatting = Formatting.Indented;
+            xWriter.WriteStartElement("People");
+            xWriter.WriteStartElement("Person"); //<Perso>
+            xWriter.WriteStartElement("Name");//<Name>
+            xWriter.WriteString(Name.Text);//textBox1.Text
+            xWriter.WriteEndElement();//<Name>
+            xWriter.WriteStartElement("Age"); //Name
+            xWriter.WriteString(numericUpDown1.Value.ToString());//textBox1.Text
+            xWriter.WriteEndElement();//<Name>
+            xWriter.WriteStartElement("Email"); //<Name>
+            xWriter.WriteString(textBox3.Text);//textBox1.Text
+            xWriter.WriteEndElement();//</Name>
+            xWriter.WriteEndElement();//</Person>
+            xWriter.WriteEndElement();
+            xWriter.Close();
+
+
+        }
+
+**********************************************************NBC# 113:Write Nodes to Existing XML File************************************
+//We need a)One button b)Three text boxes with the corresponding labels 1)Name 2)Age 3)Email
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            XmlDocument doc=new XmlDocument();
+doc.Load("C:\\xml.xml");
+XmlNode person=doc.CreateElement("Person");
+XmlNode name=doc.CreateElement("Name");
+name.InnerText=textBox1.Text;
+person.AppendChild(name);
+XmlNode  age=doc.CreateElement("Age");
+age.InnerText=numericUpDown1.Value.ToString();
+person.AppendChild(age);
+XmlNode email=doc.CreateElement("Email");
+email.InnerText=textBox2.Text;
+person.AppendChild(email);
+doc.DocumentElement.AppendChild(person);
+doc.Save("C:\\xml.xml");
+        }
+    }
+}
+
+/////////////////////////////////
+XML FILE
+<People>
+<Name>Adam</Name>
+<Age>15</Age>
+<Email>cv@gmail.com</Email>
+</Person>
+
+
+**********************************************************NBC# 114:Deleting a XML Node************************************
+//We need a)A button b)a Label c)a text box d) An XML Document
+
+private void button2_Click(object sender,EventArgs e)
+{
+XmlDocument xDoc=new XmlDocument();
+xDoc.Load("C:\\...path...xml");
+foreach (XmlNode xNode in xDoc.SelectNodes("People/Person"))
+if (xNode.SelectSingleNode("Name").InnerText==textBox1.Text)xNode.ParentNode.RemoveChild(xNode);
+xDoc.Save("C:\\.......xml");
+}
+
+//XML Document as previous**
+
+
+**********************************************************NBC# 115:MD5&SHA1************************************
+//We need a textBox & a button with name "Get Hash"
+a)
+
+private void button2_Click(object sender,EventArgs e)
+{
+MD5CryptoServiceProvider md5=new MD5CryptoServiceProvider();
+UTF8Encoding utf8=new UTFEncoding();
+MessageBox.Show(BitConverter.ToString(md5.ComputeHash(utf8.GetBytes(textBox1.Text)));
+}
+
+b)
+{
+SHA1CryptoServiceProvider  sha1=new SHA1CryptoServiceProvider();
+UTF8Encoding utf8=new UTF8Encoding();
+MessageBox.Show(BitConverter.ToString(sha1.ComputeHash(utf8.GetBytes(textBox1.Text)));
+}
+}
+}
+
+SHA1CryptoServiceProvider
+******************************************** NBC# 116:TripleDES Enceyption**************************************************
+We need a)A button named "Encrypt" b)Three text boxes with three corresponding labels named:"key","ToEncrypt","Encrypted"
+SOS:Look at the tutorial carefully
+We must add "System.Security.Cryptography"
+
+private void button2_Click(object sender,EventArgs e)
+{
+
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            UTF8Encoding utf8 = new UTF8Encoding();
+            TripleDESCryptoServiceProvider tDES = new TripleDESCryptoServiceProvider();
+            tDES.Key=md5.ComputeHash(utf8.GetBytes(textBox1.Text));
+            tDES.Mode = CipherMode.ECB;
+            ICryptoTransform trans = tDES.CreateEncryptor();
+            textBox3.Text = BitConverter.ToString(trans.TransformFinalBlock(utf8.GetBytes(textBox2.Text), 0, utf8.GetBytes(textBox2.Text).Length));
+
+}
+}
+}
+************************************************  NBC# 117:TripleDES Enceyption**********************************************
+//We need a)Two buttons with names Encrypt & Decrypt b)Text boxes with the corresponding Labels:"Key" "ToEncrypt".Also we need the
+label "Encrypted" with the corresponding key.Final a label with the name "key" and the corresponding Text.SOS:Look at the tuttorial!!
+
+using System.Security.Cryptography;
+
+namespace NB_117
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        byte[] encrypted;
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MD5CryptoServiceProvider md5=new MD5CryptoServiceProvider();
+UTF8Encoding utf8= new UTF8Encoding();
+TripleDESCryptoServiceProvider tDES=new TripleDESCryptoServiceProvider();
+tDES.Key=md5.ComputeHash(utf8.GetBytes(textBox1.Text));
+tDES.Mode=CipherMode.ECB;
+tDES.Padding=PaddingMode.PKCS7;
+ICryptoTransform trans=tDES.CreateEncryptor();
+encrypted = trans.TransformFinalBlock(utf8.GetBytes(textBox2.Text), 0, utf8.GetBytes(textBox2.Text).Length);
+textBox3.Text=BitConverter.ToString(encrypted);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+            UTF8Encoding utf8 = new UTF8Encoding();
+            TripleDESCryptoServiceProvider tDES = new TripleDESCryptoServiceProvider();
+tDES.Key=md5.ComputeHash(utf8.GetBytes(textBox5.Text));
+tDES.Mode=CipherMode.ECB;
+tDES.Padding=PaddingMode.PKCS7;
+ICryptoTransform trans = tDES.CreateDecryptor();
+textBox4.Text=utf8.GetString(trans.TransformFinalBlock(encrypted,0,encrypted.Length));
+
+}
+
+
+************************************************  NBC# 118:Drag & Drop **********************************************
+We need a panel.In propertes AllowDrop=True
+
+     private void panel1_DragOver(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+        private void panel1_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = e.Data.GetData(DataFormats.FileDrop) as string[];
+            foreach (string s in files)
+                MessageBox.Show(s);
+        }
+
+************************************************  NBC# 119: Drawing Shapes    **********************************************
+//In form we add a panel
+
+a)
+private void panel1_Click(object sender,EventArgs e)
+{
+SolidBrush sb=new SolidBrush(Color.Green);
+Graphics g=panel1.CreateGraphics();
+g.FillRectangle(sb,20,20,100,50)
+}
+
+
+b)
+private void panel1_Click(object sender,EventArgs e)
+{
+SolidBrush sb=new SolidBrush(Color.Green);
+Graphics g=panel1.CreateGraphics();
+g.FillEllipse(sb,50,50,50);
+}
+
+
+************************************************  NBC# 120: Drawing More Shapes **********************************************
+
+a)
+private void panel1_Click(object sender,EventArgs e)
+{
+SolidBrush sb = new SolidBrush(Color.Blue);
+            Graphics g = panel1.CreateGraphics();
+            g.FillPie(sb,20,20,60,60,0, 270);
+}
+}
+
+b)
+private void panel1_Click(object sender,EventArgs e)
+{
+SolidBrush sb=new SolidBrush(Color.Blue);
+Graphics g=panel1.CreateGraphics();
+Point[]points={new Point (0,20),new Point(0,0),new Point(20,0)};
+g.FillPolygon(sb,points);
+}
+}
+
+
+************************************************  NBC# 121:Drawing with Pen Class pt1  **********************************************
+//One panel is needed 
+
+a)
+private void panel1_Click(object sender,EventArgs e) //sos: I must choose "double click" in the propertes of "panel"
+{
+Pen pen=new Pen(Color.Red,3);
+Graphics g=panel1.CreateGraphics();
+g.DrawRectangle(pen,20,20,50,50);
+}
+}
+}
+
+b)
+private void panel1_Click(object sender,EventArgs e)
+{
+Pen pen=new Pen(Color.Red,3);
+Graphics g=panel1.CreateGraphics();
+g.DrawRectangle(pen,20,20,50,50);
+}
+}
+
+c)
+private void panel1_Click(object sender,EventArgs e)
+{
+Pen pen=new Pen(Color.Red,3);
+Graphics g=panel1.CreateGraphics();
+Point[]points={new Point(0,20),new Point(0,0),new Point(20,0)};
+g.DrawPolygon(pen,points);
+}
+
+
+************************************************  NBC# 122:Drawing with Pen Class pt2  **********************************************
+
+a)
+private void panel1_Click(object sender,EventArgs e)
+{
+Pen pen=new Pen(Color.Red,2);
+Graphics g=panel1.CreateGraphics();
+g.DrawArc(pen,20,20,100,100,0,90); //You can change 180 & 360
+}
+
+b)
+private void panel1_Click(object sender,EventArgs e)
+{
+Pen pen=new Pen(Color.Red,2);
+Graphics g=panel1.CreateGraphics();
+g.DrawBezier(pen,new Point(20,20),new Point(30,60),new Point(70,40),new Point(50,80));
+}
+}
+
+c)
+private void panel1_Click(object sender,EventArgs e)
+{
+Pen pen=new Pen(Color,Red,2);
+Graphics g=panel1.CreateGraphics();
+g.DrawLine(pen,new Point(0,0),new Point(100,100));
+}
+}
+
+
+************************************************  NBC# 123:Drawing String Text  **********************************************
+//We need a panel
+//Check if it is exist that "using System.Drawing;"
+ //a
+private void panel1_Click(object sender,EnentArgs e)
+{
+SolidBrush s=new SolidBrush(Color.Blue);
+Graphics g=panel1.CreateGraphics();
+FontFamily ff=new FontFamily("Arial");
+System.Drawing.Font font=new System.Drawing.Font(ff,50);  //font size
+g.DrawString("CV",font,s,new PointF(20,20));
+}
+
+//b)
+private void panel1_Click(object sender,EnentArgs e)
+{
+SolidBrush s=new SolidBrush(Color.Blue);
+Graphics g=panel1.CreateGraphics();
+FontFamily ff=new FontFamily("Courier New");
+System.Drawing.Font font=new System.Drawing.Font(ff,50);  //font size
+g.DrawString("CV",font,s,new PointF(20,20));
+}
+
+//c)
+private void panel1_Click(object sender,EnentArgs e)
+{
+   SolidBrush s = new SolidBrush(Color.Blue);
+            Graphics g = panel1.CreateGraphics();
+            FontFamily ff = new FontFamily("Courier New");
+            System.Drawing.Font font = new System.Drawing.Font(ff, 50, FontStyle.Strikeout);  //font size
+            g.DrawString("CV", font, s, new PointF(20, 20));
+}
+
+
+************************************************  NBC#-124:LinearGradientBrush     **********************************************
+//A panel is neededd
+//You must add "using System.Drawing.Drawing2D;"
+private void panel_Click(object sender, EventArgs e)
+{
+   LinearGradientBrush lgb=new LinearGradientBrush(new Point(20,20), new Point(20,70),Color.Red,Color.Yellow);
+            Graphics g = panel1.CreateGraphics();
+g.FillRectangle(lgb, 20,20,50,50);
+// g.FillEclipse(lgb,20,20,50,50);
+}
+
+
+************************************************  NBC#-125:Multiple Colors in a LinearGradientBrush    **********************************************
+
+//A panel is neededd
+//You must add "using System.Drawing.Drawing2d:"
+
+//a)
+private void panel_Click(object sender, EventArgs e)
+{
+LinearGradientBrush lgb=new LinearGradientBrush(new Point(20,20),new Point(20,70),Color.Black,Color.Red);
+Graphics g=panel1.CreateGraphics();
+ColorBlend cb=new ColorBlend();
+cb.Colors=new Color[] {Color.Black,Color.Blue,Color.White};
+cb.Positions=new float[]  {0, .5F,1F};
+lgb.InterpolationColors=cb;
+g.FillRectangle(lgb,20,20,50,50);
+}
+
+
+
+//b)
+private void panel_Click(object sender, EventArgs e)
+{
+LinearGradientBrush lgb=new LinearGradientBrush(new Point(20,20),new Point(20,70),Color.Black,Color.Red);
+Graphics g=panel1.CreateGraphics();
+ColorBlend cb=new ColorBlend();
+cb.Colors=new Color[]{Color.Black,Color.Blue,Color.SkyBlue,Color.White);
+cb.Position=new float[] {0,.33F,.66F,1F};
+g.FillRectangle(lgb,20,20,50,50);
+}
+
+************************************************  NBC#-126:PathGradientBrush pt1    **********************************************
+//We need a)a panel b)"System.Drawing.Drawing2D;"
+
+private void panel1_Click(object sender,EventArgs e)
+{
+	GraphicsPath gp=new GraphicsPath();
+	gp.AddEllipse(20,20,50,50);
+	PathGradientBrush pgb=new PathGradientBrush(gp);
+	pgb.CenterColor=Color.Red;
+        pgb.SurroundColors=new Color[] {Color.Yellow};
+	Graphics g=panel1.CreateGraphics();
+        g.FillEllipse(pgb,20,20,50,50);
+}
+
+************************************************  NBC#-127:PathGradientBrush pt2    **********************************************
+//A panel is needed
+// using System.Drawing.Drawing2D;
+private void panel1_Click(object sender,EventArgs e)
+{
+//a)
+	 GraphicsPath gp=new GraphicsPath();
+	Rectangle r=new Rectangle(20,20,50,50);
+	gp.AddRectangle(r);
+	PathGradientBrush pgb=new PathGradientBrush(gp);
+	pgb.CenterColor=Color.White;
+	pgb.SurroundColors=new Color[] {Color.Black};
+	Graphics g=panel1.CreateGraphics();
+    g.FillRectangle(pgb, r);
+}
+
+private void panel1_Click(object sender,EventArgs e)
+{
+//b)
+	GraphicsPath gp = new GraphicsPath();
+            Point[] points = { new Point(20, 20), new Point(20, 70), new Point(70, 20) };
+            gp.AddPolygon(points);
+            PathGradientBrush pgb = new PathGradientBrush(gp);
+            pgb.CenterColor = Color.White;
+            pgb.SurroundColors = new Color[] { Color.Black };
+            Graphics g = panel1.CreateGraphics();
+            g.FillPolygon(pgb, points);
+
+
+************************************************  NBC#-128:Project2 :Paint Program pt1    **********************************************
+//We need:a)A panel b)A Textbox c)Label(PenSite) d)a TextBox
+//SOS:Look at the Tutorial
+//We choose "MouseDown"
+//We add "using  System.Drawing.Drawing2D;"
+
+public partial class Form1:form
+{
+	public Form1()
+	 {
+		InitializeComponent();
+		g=panel1.CreateGraphics();
+          }
+    bool canPaint=false;
+    Graphics g;
+    private void panel1_MouseDown(object sender,MouseEventArgs e)
+	{
+	   canPaint=true;
+         }
+    private void panel1_MouseUp(object sender,MouseEventArgs e)
+	{
+	   canPaint=false;
+         }
+ private void panel1_MouseMove(object sender,MouseEventArgs e)
+	{
+	   if(canPaint)
+         }
+ 	SolidBrush s=new SolidBrush(Color.Black);
+     g.FillEllipse(s,e.X,e.Y,Convert.ToInt32(toolStripTextBox1.Text),Convert.ToInt32(toolStripTextBox1.Text));
+}
+
+
+************************************************  NBC#-129:Project2 :Paint Program pt2    **********************************************
+
+
+//Configurations as previous tutorials
+
+private void panel1_MouseMore(object sender,MouseEventArgs e)
+public Form1()
+	{
+		InitialiazeComponent();
+		g=panel1.CreateGraphics();
+		}
+bool canPaint=false;
+Graphics g;
+private void panel1_MouseDown(object sender,MouseEventArgs  e)
+{
+	canPaint=true;
+}
+private void panel1_MouseUp(object sender,MouseEventArgs e)
+{
+canPaint=false;
+prevX=null;
+prevY=null;
+}
+int?prevX=null;
+int?prevY=null;
+private void panel_MouseMove(object sender,MouseEventArgs e)
+{
+if  (canPaint)
+}
+Pen pen=new Pen(Color.Black,float.Parse(toolStripTextBox1.Text));
+g.DrawLine(pen, new Point(prevX?? e.X, prevY??e.Y),new Point(e.X,e.Y));
+prevX=e.X;
+prevY=e.Y;
+}
+
+
+************************************************  NBC#-130:Project2 :Paint Program pt3    **********************************************
+//SOS:LOOK AT THE TUTORIAL
+//At the propertes of "toolStripButton" we go:"Text" and write PenColor "DisplayStyle":Text
+//We add the "toolStripButton2" & in DisplayStyle->Text
+//We add toolStripButton3, Text->Canvas Color
+
+namespace WindowsFormsApplication1
+{
+     public partial class Form1:Form
+           {
+		public Form1()
+			{
+			   InitializeComponent();
+			   g=panel1.CreateGraphics();
+			   }
+			   bool canPaint=false;
+                           Graphics g;
+       private void panel1_MouseDown(object sender,MouseEventArgs e)
+         {
+             canPaint=true;
+          }
+      
+       private void panel1_MouseUp(object sender,MouseEventArgs e)
+{
+	canPaint=false;
+           prevX=null;
+           prevY=null;
+}
+int? prevX=null;
+int? prevY=null;
+private void panel1_MouseMove(object sender,MouseEventArgs e)
+{
+  if(canPaint)
+}
+Pen pen=new Pen(toolStripButton1.ForeColor,float.Parse(toolStripTextBox1.Text));
+g.DrawLine(pen, new Point(prevX ?? e.X, prevY ?? e.Y), new Point(e.X, e.Y));
+prevX=e.X;
+prevY=e.Y;
+}
+}
+private void toolStripButton1_Click(object sender,EventArgs e)
+{
+  ColorDialog cd=new ColorDialog();
+  if (cd.ShowDialog()==DialogResult.OK)
+{
+ toolStripButton1.ForeColor=cd.Color;
+}
+}
+
+private void toolStripButton2_Click(object sender,EventArgs e)
+{
+g.Clear(panel1.BackColor);
+}
+
+private void toolStripButton3_Click(object sender,EventArgs e)
+{
+  colorDialog cd=new ColorDialog();
+  if (cd.ShowDialog()==DialogResult.OK)
+{
+toolStripButton3.ForeColor=cd.Color;
+panel1.BackColor=cd.Color;
+}
+}
+
+************************************************  NBC#-131:Project2 :Paint Program pt4    **********************************************
+//SOS:Look at the tutorial
+//We add a SplitButton and in the Text Property we add:Draw Shape & DisplayStyle.We define "Text" and we write "Square","Rectangle","Circle"
+//Also we add "using System.Drawing2D;"
+//We add toolStrip Label2 and in properties we write Text:Shape Size,in Size we put it 633,392
+
+namespace NB_131_132
+{
+
+    public partial class Form1 : Form
+    
+    {
+        public Form1()
+        {
+    InitializeComponent();
+            g=panel1.CreateGraphics();
+}
+bool canPaint=false;
+Graphics g;
+private void panel1_MouseDown(object sender,MouseEventArgs e)
+{
+canPaint=true;
+if (drawSquare)
+{
+SolidBrush s=new SolidBrush(toolStripButton1.ForeColor);
+g.FillRectangle(s,e.X,e.Y,Convert.ToInt32(toolStripTextBox2.Text),Convert.ToInt32(toolStripTextBox2.Text));
+canPaint=false;
+drawSquare=false;
+}
+else if (drawRectangle)
+{
+SolidBrush s=new SolidBrush(toolStripButton1.ForeColor);
+g.FillRectangle(s,e.X,e.Y,Convert.ToInt32(toolStripTextBox2.Text)*2,Convert.ToInt32(toolStripTextBox2.Text));
+canPaint=false;
+drawSquare=false;
+}
+}
+private void panel1_MouseUp(object sender,MouseEventArgs e)
+{
+canPaint=false;
+prevX=null;
+prevY=null;
+}
+int?prevX=null;
+int?prevY=null;
+private void panel1_MouseMove(object sender,MouseEventArgs e)
+{
+if(canPaint)
+{
+Pen pen=new Pen(toolStripButton1.ForeColor,float.Parse(toolStripTextBox1.Text));
+g.DrawLine(pen,new Point(prevX??e.X,prevY??e.Y),new Point(e.X,e.Y));
+prevX=e.X;
+prevY=e.Y;
+}
+}
+private void toolStripButton1_Click(object sender,EventArgs e)
+{
+ColorDialog cd=new ColorDialog();
+if (cd.ShowDialog()==DialogResult.OK)
+{
+toolStripButton1.ForeColor=cd.Color;
+}
+}
+private void toolStripButton2_Click(object sender,EventArgs e)
+{
+g.Clear(panel1.BackColor);
+}
+private void toolStripButton3_Click(object sender,EventArgs e)
+{
+ColorDialog cd=new ColorDialog();
+if (cd.ShowDialog()==DialogResult.OK)
+{
+toolStripButton3.ForeColor=cd.Color;
+panel1.BackColor=cd.Color;
+}
+}
+bool drawSquare=false;
+private void squareToolStripMenuItem_Click(object sender,EventArgs e)
+{
+drawSquare=true;
+}
+bool drawRectangle=false;
+private void rectangleToolStripMenuItem_Click(object sender,EventArgs e)
+{
+drawRectangle=true;
+}
+    }
+}
+
+************************************************  NBC#-132:Project2 :Paint Program pt5    **********************************************
+//The tutorial is the continue of the 131
+//In propertes of panel1 we change the follow:AllowDrop->True
+//In the panel we go propertes,in the Thunder button->Double click in panel1_Drag
+//Next we do double click in DragDrop
+
+private void panel1_DragEnter
+{
+g.Effect=DragDropEffect.All;
+}
+private void panel1_DragDrop(object sender, DragEventArgs e)
+{
+string[]imagePaths=(string[])e.Data.GetData(DataFormats.fileDrop);
+foreach(string path in ImagePaths)
+{
+g.DrawImage(Image.FromFile(path),new Point(0,0));
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+namespace NB_131_132
+{
+
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+            g = panel1.CreateGraphics();
+        }
+        bool canPaint = false;
+        Graphics g;
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            canPaint = true;
+            if (drawSquare)
+            {
+                SolidBrush s = new SolidBrush(toolStripButton1.ForeColor);
+                g.FillRectangle(s, e.X, e.Y, Convert.ToInt32(toolStripTextBox2.Text), Convert.ToInt32(toolStripTextBox2.Text));
+                canPaint = false;
+                drawSquare = false;
+            }
+            else if (drawRectangle)
+            {
+                SolidBrush s = new SolidBrush(toolStripButton1.ForeColor);
+                g.FillRectangle(s, e.X, e.Y, Convert.ToInt32(toolStripTextBox2.Text) * 2, Convert.ToInt32(toolStripTextBox2.Text));
+                canPaint = false;
+                drawSquare = false;
+            }
+        }
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            canPaint = false;
+            prevX = null;
+            prevY = null;
+        }
+        int? prevX = null;
+        int? prevY = null;
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (canPaint)
+            {
+                Pen pen = new Pen(toolStripButton1.ForeColor, float.Parse(toolStripTextBox1.Text));
+                g.DrawLine(pen, new Point(prevX ?? e.X, prevY ?? e.Y), new Point(e.X, e.Y));
+                prevX = e.X;
+                prevY = e.Y;
+            }
+        }
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ColorDialog cd = new ColorDialog();
+            if (cd.ShowDialog() == DialogResult.OK)
+            {
+                toolStripButton1.ForeColor = cd.Color;
+            }
+        }
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            g.Clear(panel1.BackColor);
+        }
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            ColorDialog cd = new ColorDialog();
+            if (cd.ShowDialog() == DialogResult.OK)
+            {
+                toolStripButton3.ForeColor = cd.Color;
+                panel1.BackColor = cd.Color;
+            }
+        }
+        bool drawSquare = false;
+        private void squareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            drawSquare = true;
+        }
+        bool drawRectangle = false;
+        private IEnumerable<string> ImagePath;
+        private void rectangleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            drawRectangle = true;
+        }
+
+        private void panel1_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.All;
+        }
+        private void panel1_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] imagePaths = (string[])e.Data.GetData(DataFormats.FileDrop);
+            foreach (string path in ImagePath)
+            {
+                g.DrawImage(Image.FromFile(path), new Point(0, 0));
+            }
+        }
+    }
+}
+
+}
+******************************************NBC#-133:Making Controls pt1 **************************************************************************************
+//Add Windows Form->Add New Item ->User Control -> Name it "My button"
+//SOS:Look at the tutorial
+//View Code
+public partial class MyButton:UserControl
+{
+public MyButton()
+{
+InitializeComponent();
+}
+protected override void OnPaint(PaintEventArgs e)
+{
+SolidBrush s=new SolidBrush(Color.FromKnownColor(KnownColor.Control));
+g.FillRectangle(s,0,0,this.Width,this.Height);
+
+******************************************NBC#-134:Making Controls pt2 **************************************************************************************
+//In button design we add a label
+//In "Propertes"->ButtonText->"Adam's Button"
+protected override void OnPaint (PaintEventArgs e)
+{
+SolidBrush s=new SolidBrush(Color,FromKnownColor.Control));
+Graphics g=this.CreateGraphics();
+g.FillRectangle(s,0,0,this.Height);
+label1.Location=new Point((this.Width/2)*(label1.Width/2),(this.Height/2)*(label.Height/2));
+}
+public string ButtonText
+{  get {return label1.Text;}
+   set{label1.Text=value;}
+}
+
+******************************************NBC#-135:Making Controls pt3 **************************************************************************************
+//We add a Button
+
+protected override void OnPaint(PaintEventArgs e)
+{
+ SolidBrush s=new SolidBrush(Color.Blue);
+Graphics g=this.CreateGraphics();
+g.FillRectangle(s,0,0,this.Width,this.Height);
+s.Color=Color.SkyBlue;
+g.FillRectangle(s,0,this.Height/2,this.Width,this.Height/2);
+label1.Location=new Point(this.Width/2)-(label1.Width/2),(this.Height/2)-(label1.Height/2));
+}
+public string ButtonText
+{
+get{return label1.Text}
+set{label1.Text=value;}
+}
+
+
+
+******************************************NBC#-136:Making Controls pt4 **************************************************************************************
+//We continue 135
+//SOS:Look at the tutorial
+//In "My button propertes we add:"Hello I am Chris"
+//In MyButton.cs we write:
+
+namespace WindowsFormsApplication1
+{
+public partial class MyButton:UserControl
+{
+public MyButton()
+{
+InitializeComponent();
+}
+string text=" ";
+protected override void OnPaint(PaintEventArgs e)
+{
+SolidBrush s=new SolidBrush(Color.FromKnownColor(KnownColor.Control));
+Graphics g=this.CreateGraphics();
+g.FillRectangle(s,0,0,this.Width,this.Height);
+s.Color=Color.FromKnownColor(KnownColor.ControlLight);
+g.FillRectangle(s,0,this.Height/2,this.Width,this.Height/2);
+PointF fpoint=new Point((this.Width/2)-(text.Length),(this.Height/2)-(text.Length-5));
+FontFamily ff=new FontFamily("Arial");
+Font f=new System.Drawing.Font(ff,8);
+s.Color=Color.Black;
+g.DrawString(text,f,s,fpoint);
+}
+public string ButtonText
+{
+get{return text;}
+set{text=value;}
+}
+
+*******************************************NBC#-137:Making Controls pt5**************************************************************************************
+//Choose "MyButton [Design]
+
+public MyButton()
+{
+InitializeComponent();
+}
+string text="";
+protected override void OnPaint(PaintRventArgs e)
+{
+DrawButton(Color.FromKnownColor(KnownColor.Control));
+}
+public string ButtonText
+{
+get{return text;}
+set{text=value;}
+}
+private void MyButton_MouseHover(object sender,EventArgs e)
+{
+Color myColor=Color.FromArgb(255,Color.FromKnownColor(KnownColor.Control).R-30,Color.FromKnownColor(KnownColor.Control).R-5,255);
+DrawButton(myColor);
+}
+void DrawButton(Color c)
+{
+SolidBrush s=new SolidBrush(c);
+Graphics g=this.CreateGraaphics();
+g.FillRectangle(s,0,0,this.Width,this.Height);
+s.Color=Color.FromArgb(255,C.R-13,C.G-13,C.B-13);
+g.FillRectangle(s,0,this.Height/2,this.Width,this.Height/2);
+Pointf fpoint=new Point((this.Width/2)-(text.Length-5),(this.Height/2)-(text.Length-5),(this.Height/2)-(text.Length-5));
+FontFamily ff=new FontFamily("Arial");
+Font f=new System.Drawing.Font(ff,8);
+s.Color=Color.Black;
+g.DrawString(text,f,s,fpoint);
+}
+private void MyButton_MouseLeave(object sender,EventArgs e)
+{
+DrawButton(Color.FromKnowColor(KnownColor.Control));
+}
+private void MyButton_MouseEvent (object sender,EventArgs e)
+{
+Color myColor=Color.FromArgb(255,Color.FromKnownColor(KnownColor.Control).R-5,255);
+DrawButton(myColor);
+}
+}
+} 
+
+******************************************NBC#-138:Making Controls pt6 (didn'y work)**************************************************************************************
+//We continue as previous
+namespace NB_133
+{
+    public partial class MyButton : UserControl
+    {
+       public partial class MyButton:UserControl
+{
+public MyButton()
+{
+InitializeComponent();
+}
+       
+   
+      string text="";
+Color myButtonColor;
+protected override void OnPaint(PaintEventArgs e)
+{
+DrawButton(myButtonColor);
+}
+public string ButtonText
+{
+get{return text;}
+set{text=value;}
+}
+private void MyButton_MouseHover(object sender,EventArgs e)
+{
+Color myColor=Color.FromArgb(255,Color.FromKnownColor(KnownColor.Control).R-30,Color.FromKnownColor(KnownColor.Control).R-5,255);
+DrawButton(myColor);
+}
+public Color ButtonColor
+{
+get{return myButtonColor;}
+{
+get{return myButtonColor;}
+set
+{
+myButtonColor=value;
+try
+{
+DrawButton(myButtonColor);
+}
+catch
+{
+myButtonColor=Color.FromKnowColor.Control);
+MessageBox.Show("Please select a valid color");
+}
+}
+}
+}
+       
+void DrawButton(Color c)
+{
+SolidBrush s=new SolidBrush(c);
+Graphics g=this.CreateGraphics();
+g.FillRectangle(s,0,0,this.Width,this.Height);
+s.Color=Color.FromArgb(255,c.R-13,c.G-13,c.B-13);
+g.FillRectangle(s,0,this.Height/2,this.Width,this.Height/2);
+FontFamily ff=new FontFamily("Arial);
+Font f=new System.Drawing.Font(ff,8);
+s.Color=Color.Black;
+g.DrawString(text,f,s,fpoint);
+}
+private void MyButton_MouseLeave(object sender,EventArgs e)
+{
+DrawButton(myButtonColor);
+}
+private void MyButton_MouseEnter(object sender,EventArgs e)
+{
+Color myColor=Color.FromArgb(255,Color.FromKnownColor(KnownColor.Control).R-30,Color.FromKnownColor(KnownColor.Control).R-5,255);
+DrawButton(myColor);
+}
+private void MyButton_MouseDown(object sender,MouseEventArgs e)
+{
+Color myColor=Color.FromArgb(255,Color.FromKnownColor(KnownColor.Control).R+15,Color.FromKnownColor(KnownColor.Control).G-15,150);
+}
+}
+}
+
+******************************************NBC#-139:Inherit from Existing Controls **************************************************************************************
+
+//We go to UseControls.cs
+namespace WindowsFormsApplication2
+{
+public partial class UserControls:Button
+{
+public UderControl()
+{
+InitializeComponent();
+}
+public override string Text
+{
+get
+{
+return base.Text;
+}
+set
+{
+if (value=="Adam")
+{
+MessageBox.Show("Youare not authorized to use that name");
+base.Text"Usecontrol";
+return;
+}
+base.Text=value;
+}
+}
+protected overide void OnClick(EventArgs  e)
+{
+Message.Show(Hello);
+}
+}
+
+******************************************NBC#-140:Splash Screen*************************************************************************
+//Project->Add New Item
+//form Border Style:None
+//PictureBox:We choose an Image.Righ click->View Code
+//Propertes->
+
+Form
+------
+private void Form1_FormClosed(object sender,FormClosedEventArgs e)
+{
+Application.Exit();
+}
+}
+---------------------------------------------------------------------
+
+Programs.cs
+static void Main()
+{
+Application.EnableVisualStyles();
+Application.SetCompatibleTextRenderingDefault(false);
+Application.Run(new SplashScreen();
+}
+}
+}
+
+******************************************NBC#-141:Making a DLL **************************************************************************************
+//We choose ->New Project->Class Library
+//We name it MyDLL
+
+a)
+namespace MyDLL
+{
+    namespace Clients
+    {
+         
+        public class Clent
+        {
+        public string Name
+   
+        {
+            get;
+            set;
+        }
+        public int Age
+        {
+            get;
+            set;
+        }
+    }
+}
+}
+
+
+//Next we go to an other application and add:using MyDLL.Clients
+//We go to references->Add References-->We add MyDDLL
+//SOS:We must run the project MY DLL first
+namespace NB_141
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Client c = new Client();
+            c.Name="CV";
+
+        }
+    }
+}
+
+
+
+******************************************NBC#-142:Internal Access Modyfier **************************************************************************************
+//SOS:Look at the corresponding Tutorial
+//We go to MyDll
+class
+namespace MyDLL
+{
+namespace Clients
+{
+internal string Name
+{
+get;
+set;
+}
+internal int Height=25;
+public int Age
+{
+get;
+set;
+}
+}
+}
+class myClass
+{
+void MyMethod()
+{
+Clients.Client c=new Clients.Client();
+}
+}
+}
+}
+_________
+form1
+________
+private void button1_Click(object sender, EventArgs e)
+{
+
+Client c=new Client();
+}
+
+
+
+
+
+
+******************************************NBC#-143:Comments and description **************************************************************************************
+// One line comment
+/*
+ *
+ */
+
+///<summary>
+///When we write code we have description
+///</summary>
+
+
+******************************************NBC#-144:GOTO keyword**************************************************************************************
+//we need a button
+a)
+private button1_Click_1(object sender,EventArgs e)
+{
+string Adam="Biach";
+switch(Adam)
+{
+case "Adam":
+ MessageBox.Show("Hello");
+break;
+default:
+MessageBox.Show("The default");
+goto case "Adam";
+}
+b)
+private button1_Click_1(object sender,EventArgs e)
+{
+goto MyCode;
+MyCode:
+{
+MessageBox.Show("Hello");
+}
+
+c)
+private button1_Click_1(object sender,EventArgs e)
+{
+for(;;)
+{
+goto MyCode;
+}
+MyCode:
+{
+MessageBox.Show("Hello");
+}
+
+******************************************NBC#-145:Capturing Screen**************************************************************************************
+//One button is needed
+//using System.Threading
+a)
+private void button1_Click(object sender,EventArgs e)
+{
+Bitmap b=new Bitmap(Screen.PrimaryScreen.WorkingArea.Width,Screen.PrimaryScreen.WorkingArea.Height);
+Graphics g=Graphics.FromImage(6);
+g.CopyFromScreen(Point.Empty,Point.Empty,Screen.PrimaryScreen.WorkingArea.Size);
+pictureBox1.Image=b;
+}
+}
+}
+
+b)
+private void button1_Click(object sender,EventArgs e)
+{
+Thread  t=new Thread(Blah);
+t.Start();
+}
+void Blah()
+{
+for(;;)
+{
+Bitmap b=new Bitmap(Screen.PrimaryScreen.WorkingArea.Width,Screen.PrimaryScreen.WorkingArea.Height);
+Graphics g=GraphicsFromImage(b);
+g.CopyFromScreen(Point.Empty,Point.Empty,Screen.PrimaryScreen.WorkingArea.Size);
+pictureBox1.Image=b;
+}
+}
+
+
+******************************************NBC#-146:Making Keyboard Shortcuts**************************************************************************************
+//Through propertes we choose "KeyDown" choice
+a)private void Form1_KeyDown(object sender.KeyEventArgs e)
+{
+if(e.Control && e.KeyCode.ToString()=="A")
+MessageBox.Show("Adam");
+}
+}
+}
+
+b)
+//We add a textBox
+//We go to "Events"(z) and we choose the property "keyDown"
+
+ a)private void Form1_KeyDown(object sender.KeyEventArgs e)
+{
+if (e.Control && e.KeyCode.ToString()=="F")
+MessageBox.Show("You pressed ctrl & F from the textBox");
+}
+}
+}
+
+
+
+******************************************NBC#-147:Checking Control on Leave**************************************************************************************
+//Two text Boxes are needed
+//We name the firstBox CV and next we go to events and choose the "Leave"
+a)
+private void textBox1_Leave(object sender,EventArgs e)
+{
+if (textBox1.Text=="")
+{
+MessageBox.Show("You must provide a name");
+textBox1.Select();//"Select is a method
+}
+
+
+b)
+//We add a Combo Box
+namespace xxx
+{
+public Form1()
+{
+InitializeComponent();
+comboBox1.SelectedIndex=0;
+}
+private void textBox1_Leave(objectsender,EventArgs e)
+{
+if(textBox1.Text=="")
+{
+MessageBox.Show("You must provide a name");
+textBox1.Select();//"Select is a method
+}
+}
+private void  comboBox1.SelectedIndex==0)
+{
+MessageBox.Show("You must select a country");
+comboBox1.Select();
+}
+
+******************************************NBC#-148:Overloading Operators pt1**************************************************************************************
+//We need a button
+//All operators must public and static
+namespace NB_148
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Item item1 = new Item();
+            item1.Price = 4;
+            Item item2 = new Item();
+            item2.Price = 6;
+            Item item3 = item1 + item2;
+            MessageBox.Show(item3.Price.ToString());
+        }
+    }
+
+    class Item
+{
+public int Price
+{
+get;
+set;
+}
+public static Item operator +(Item i1,Item i2)
+{
+Item i3=new Item();
+i3.Price=i1.Price+i2.Price;
+return i3;
+}
+}
+    }
+***************************************NBC#-Overloading Operators 149 pt2****************************************************************************
+//We need a button and an "Item" class
+private void button1_Click(object sender,EventArgs e)
+{
+Item item1=new Item();
+item1.Price=5;
+Item.item2=new Item();
+item2.Price=5;
+if (item==item2) MessageBox("The items are the same");
+}
+}
+class Item
+{
+public int Price
+{
+get;
+set;
+}
+public static Item operator+(Item i1,Item i2)
+{
+Item i3=new Item();
+i3.Price=i1.Price+i2.Price;
+return i3;
+}
+public static bool operator==(Item i1,Item i2)
+{
+return (i1.Price==i2.Price) ? true:false;
+}
+public static bool operator !=(Item i1,Item i2)
+{
+return (i1.Price != i2.Price)? true:false;
+}
+
+
+***************************************NBC#-Overloading Operators 150 pt3****************************************************************************
+//We need a button and an "Item" class
+private void button1_Click(object sender,EventArgs e)
+{
+Item item1=new Item();
+item1.Price=3;
+Item item2=new Item();
+item2.Price=3;
+if (item2>=item1) MessageBox.Show("Item2 costs more than item1, or item2 is the same price as item1");
+}
+}
+class Item
+{
+public int Price
+{
+get;
+set;
+}
+public static Item operator +(Item i1,Item i2)
+{
+Item i3=new Item();
+i3.Price=i1.Price+i2.Price;
+return i3;
+}
+public static bool operator==(Item i1,Item i2)
+{
+return (i1.Price==i2.Price)?true:false;
+}
+public static bool operator!=(Item i1,Item i2)
+{
+return (i1.Price!=i2.Price)?true:false;
+}
+public static bool operator==(Item i1,Item i2)
+{
+return (i1.Price==i2.Price)?true:false;
+}
+public static bool operator <=(Item i1,Item i2)
+{
+return (i1.Price<=i2.Price)?true:false;
+}
+public static bool operator >=(Item i1,Item i2)
+{
+return (i1.Price>=i2.Price)?true:false;
+}
+**************************NBC C#151:Overloading Operators pt4*****************************************
+
+
+//One button is needed
+private void button1_Click(object sender,EventArgs e)
+{
+Item i=new Item();
+i.Price=2;
+i++;
+MessageBox.Show(i.Price.ToString);
+}
+}
+class Item
+{
+get;
+set;
+}
+public static Item operator +(Item i1,Item i2)
+{
+Item i3=new item();
+i3.Price=i1.Price+i2.Price;
+return i3;
+}
+publlic static bool operator==(Item i1,Item i2)
+{
+return (i1.Price==i2.Price)? true:false;
+}
+public static bool operator !=(Item i1, Item i2)
+{
+return (i1.Price!=i2.Price)?true:false;
+}
+public static bool operator <=(Item i1, Item i2)
+{
+return (i1.Price<=i2.Price)?true:false;
+}
+public static bool operator >=(Item i1, Item i2)
+{
+return (i1.Price>=i2.Price)?true:false;
+}
+public static Item operator ++(Item, item)
+{
+Item i=new Item();
+i.Price=item.Price+i;
+return i;
+}
+public static Item operator --(Item, item)
+{
+Item i=new Item();
+i.Price=item.Price-i;
+return i;
+}
+//++
+//--
+*******************************************************NB-151:Overloading pt 4********************************************************
+//One button is needed & an Item class
+private void button1_Click(object sender,EventArgs e)
+{
+Item i=new Item();
+i.Price=2;
+i--;
+MessageBox.Show(i.Price.ToString());
+}
+}
+class Item
+{
+public int Price
+{
+get;
+set;
+}
+public static Item operator+(Item i1,Item i2)
+{
+Item i3=new Item();
+i3.Price=i1.Price+i2.Price;
+return i3;
+}
+public static bool operator ==(Item i1,Item i2)
+{
+return (i2.Price==i2.Price)?true:false;
+}
+public static operator !=(Item i1, Item i2)
+{
+return (i1.Price !=i2.Price)? true:false;
+}
+public static bool operator <=(Item item1,Item item2)
+{
+return (i1.Price <=i2.Price)? true:false;
+}
+public static bool operator >=(Item item1,Item item2)
+{
+return (i1.Price >=i2.Price)? true:false;
+}
+public static Item operator --(Item,item)
+{
+Item i=new Item();
+i.Price=item.Price-1;
+return i;
+}
+
+
+
+*******************************************************NB-152:Making Conversion Operators********************************************************
+a)
+private void button1_Click(object sender,EventArgs e)
+{
+Item i=(item)3; //Explicit
+MessageBox.Show(i.Price.ToString());
+//Item item=3;//Implicit
+}
+}
+class Item
+{
+public int Price
+{
+get;
+set;
+}
+public static explicit operarator Item(int itemPrice)
+{
+Item i=new Item();
+i.Price=itemPrice;
+retun i;
+}
+//public static implicit operarator Item(int itemPrice)
+//{
+//Item i=new Item();
+//i.Price=itemPrice;
+//retun i;
+//}
+
+b)
+private void button1_Click(object sender,EventArgs e)
+{
+Item item=3; //Implicit
+MessageBox.Show(item.Price.ToString());
+}
+}
+class Item
+{
+public int Price
+{
+get;
+set;
+}
+public static implicit operarator Item(int ItemPrice)
+{
+Item i=new Item();
+i.Price=itemPrice;
+}
+}
+}
+
+
+}
+************************************************************NB C# 153:Ref &Out  Keyboards**********************************************************************
+//We need a button
+a)
+private void button1_Clicl(object sender,EventArgs e)
+{
+int Age=3;
+Modify(Age);
+MessageBox.Show(Age.ToString());
+}
+void Modify(int age)
+{
+age +=5;
+   }
+  }
+}
+
+b)
+private void button1_Clicl(object sender,EventArgs e)
+{
+int Age=3;
+Modify(ref Age);
+MessageBox.Show(Age.ToString());
+}
+void Modify(ref int age)
+{
+age +=5;
+   }
+  }
+}
+
+c)
+private void button1_Clicl(object sender,EventArgs e)
+{
+int Age=3;
+string name;
+Modify (ref Age,out name);
+MessageBox.Show(Age.ToString()+"::"+name);
+}
+void Modify(ref int age,out string Name)
+{
+Name="Adam";
+age +=5;
+}
+}
+}
+*****************************************************NB C# 154:Project 3 Hang Man Game, Making the UI******************************
+*/It is needed a)GroupBox b)a Panel(BorderStyle-None) c)2 Buttons:"Submit  Word" d) A Label Box name "Word Length".The name of form will be Hang Man
+MaximizeBox false
+FromBorderStyle:fixedSingle  
+
+*****************************************************NB C# 155:Project 3 Hang Man Game, Drawing Hang Post******************************
+//SOS:Follow the tuttorial.We change the "Show" Property
+
+void DrawHangPost()
+{
+Graphics g=panel1.CreateGraphics();
+Pen p=new Pen(Color.Brown,10);
+g.DrawLine(p,new Point(130,218),new Point(130,5));
+g.DrawLine(p,new Point(135,5),new Point(65,5));
+g.DrawLine(p,new Point(60,0),new Point(60,50));
+}
+private void form1.Shown(object sender,EventArgs e)
+{
+DrawnHangPost();
+}
+}
+}
+
+
+*****************************************************NB C# 156:Project 3 Hang Man Game, Drawing Face******************************
+namespace xxx
+{
+partial class Form1:Form
+{
+public Form()
+{
+InitializeComponent();
+}
+enum BodyParts
+{
+Head,
+Left_Eye,
+Right_Eye,
+Mouth,
+Right_Arm,
+Body,
+Right_Leg
+Left_Leg
+}
+void DrawHangPost()
+{
+Graphics g=panel.CreateGraphics();
+Pen p=new Pen(Color.Brown,10);
+g.DrawLine(p,new Point(130,218),new Point(130,5));
+g.DrawLine(p,new Point(135,5),new Point(65,5));
+g.DrawLine(p,new Point(60,0),new Point(60,50));
+DrawBodyPart(BodyParts.Head);
+DrawBodyPart(BodyParts.Left_Eye);
+DrawBodyPart(BodyParts.Right_Eye);
+DrawBodyPart(BodyParts.Mouth);
+}
+void DrawBodyPart(BodyParts bp)
+{
+Graphics g=panel1.CreateGraphics();
+Pen p=new Pen(Color.Blue,2);
+if(bp==BodyParts.Head)
+g.DrawEllipse(p,40,50,40,40);
+else if (bp==BodyParts.Left_Eye)
+{
+SolidBrush s=new SolidBrush(Color.Black);
+g.FillEclipse(s,50,60,5,5);
+}
+else if(bp==BodyPats.Right_Eye)
+{
+SolidBrush s=new SolidBrush(Color.Black);
+g.FillEllipse(s,63,60,5,5);
+}
+else if (bp==BodyParts.Mouth)
+g.DrawArc(p,50,60,20,20,45,90);
+}
+private void Form1_Shown(object sender,EventArga e)
+{
+DrawingPost();
+}
+}
+
+*****************************************************NB C# 157:Project 3 Hang Man Game, Drawing Body & Arms******************************
+//The calculation of Body is based the MsPaint
+//We chanege (Add things) in "DrawingHangPost" & "DrawBodyPart"
+void DrawHangPost()
+{
+Graphics g=panel.CreateGraphics();
+Pen p=new Pen(Color.Brown,10);
+g.DrawLine(p,new Point(130,218),new Point(130,5));
+g.DrawLine(p,new Point(135,5),new Point(65,5));
+g.DrawLine(p,new Point(60,0),new Point(60,50));
+DrawBodyPart(BodyParts.Head);
+DrawBodyPart(BodyParts.Left_Eye);
+DrawBodyPart(BodyParts.Right_Eye);
+DrawBodyPart(BodyParts.Mouth);
+DrawBodyPart(BodyParts.Body);
+DrawBodyPart(BodyParts.Left_Arm);
+DrawBodyPart(BodyParts.Right_Arm);
+}
+
+void DrawBodyPart(BodyParts bp)
+{
+Graphics g=panel1.CreateGraphics();
+Pen p=new Pen(Color.Blue,2);
+if(bp==BodyParts.Head)
+g.DrawEllipse(p,40,50,40,40);
+else if (bp==BodyParts.Left_Eye)
+{
+SolidBrush s=new SolidBrush(Color.Black);
+g.FillEclipse(s,50,60,5,5);
+}
+else if(bp==BodyPats.Right_Eye)
+{
+SolidBrush s=new SolidBrush(Color.Black);
+g.FillEllipse(s,63,60,5,5);
+}
+else if (bp==BodyParts.Mouth)
+g.DrawArc(p,50,60,20,20,45,90);
+else if(bp==BodyParts.Body)
+g.DrawLine(p,new Point(60,90),new Point(60,170));
+else if(bp==BodyParts.Body)
+g.DrawLine(p,new Point(60,90),new Point(30,85));
+else if (bp==BodyParts.Right_Arm)
+g.DrawLine(p,new Point(60,100),new Point(90,85));
+}
+private void Form1_Shown(object sender,EventArga e)
+{
+DrawingPost();
+}
+}
+
+
+*****************************************************NB C# 158:Project 3 Hang Man Game, Drawing Legs******************************
+//We add some code.We Draw Legs
+
+void DrawHangPost()
+{
+Graphics g=panel.CreateGraphics();
+Pen p=new Pen(Color.Brown,10);
+g.DrawLine(p,new Point(130,218),new Point(130,5));
+g.DrawLine(p,new Point(135,5),new Point(65,5));
+g.DrawLine(p,new Point(60,0),new Point(60,50));
+DrawBodyPart(BodyParts.Head);
+DrawBodyPart(BodyParts.Left_Eye);
+DrawBodyPart(BodyParts.Right_Eye);
+DrawBodyPart(BodyParts.Mouth);
+DrawBodyPart(BodyParts.Body);
+DrawBodyPart(BodyParts.Left_Arm);
+DrawBodyPart(BodyParts.Right_Arm);
+DrawBodyPart(BodyParts.Left_Leg);
+DrawBodyPart(BodyParts.Right_Leg);
+}
+void DrawBodyPart(BodyParts bp)
+{
+Graphics g=panel1.CreateGraphics();
+Pen p=new Pen(Color.Blue,2);
+if(bp==BodyParts.Head)
+g.DrawEllipse(p,40,50,40,40);
+else if (bp==BodyParts.Left_Eye)
+{
+SolidBrush s=new SolidBrush(Color.Black);
+g.FillEclipse(s,50,60,5,5);
+}
+
+*****************************************************NB C# 159:Project 3 Hang Man Game, Getting Random Word******************************
+//1)SOS:Look at the tuttorial 2)Handy word list
+//We add:"using System.Net;
+//We go to "void DrawHangPost"  and add the follows
+
+void DrawHangPost()
+{
+Graphics g=panel1.CreateGraphics();
+Pen p=new Pen(Color.Brown,10);
+g.DrawLine(p,new Point(130,218),new Point(130,5));
+g.DrawLine(p,new Point(135,5),new Point(65,5));
+g.DrawLine(p,new Point(60,0),new Point(60,50));
+DrawBodyPart();
+DrawBodyPart();
+DrawBodyPart();
+DrawBodyPart();
+DrawBodyPart();
+DrawBodyPart();
+DrawBodyPart();
+DrawBodyPart();
+DrawBodyPart();
+MessageBox.Show(GetRandomWord));
+}
+.
+.
+.
+string GetRandomWord()
+{
+WebClient wc=new WebClient();
+string wordList=wc.DownloadString(http://dictionary-thesaurus.com/wordlists/Adjectives%28929%29.txt");
+string words=wordList.Split('\n');
+Random ran=new Random();
+return words[ran.Next(0,words.Length-1)];
+}
+
+
+
+
+}
+private void Form1_Shown(object sender,EventArga e)
+{
+DrawingPost();
+}
+}
+
+*****************************************************NB C# 160:Project 3 Hang Man Game, Making the Labels pt1******************************
+....
+....
+elsei if(bp==BodyParts.Right_Leg)
+g.DrawLine(p,new Point()60,70),new Point(90,190));
+}
+
+void MakeLabels()
+{
+word=GetRandomWord();
+char[] chars=word.ToCharArray();
+int between=330/chars.Length-1;
+for(int i=0; i<chars.Length-1;i++)
+{
+labels.Add(new Label());
+}
+}
+string GetRandomWord()
+..
+..
+
+//We go to  the first Lines of code 
+...
+...
+InitializeComponent();
+}
+string word="";
+List<Label>labels=new List<Label>()
+...
